@@ -1,17 +1,85 @@
-## Welcome to GitHub Pages
 
-You can use the [editor on GitHub](https://github.com/testOrg762/reading-notes/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+# Reading Notes
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## **Code 401** - _Advanced Software Development with Python_
 
-### Markdown
+### *Class 01 Reading*
+- Coming Soon
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### *Class 02 Reading*
+- Coming Soon
 
-```markdown
-Syntax highlighted code block
+### *Class 03 Reading*
+- Coming Soon
 
-# Header 1
+### *Class 04 Reading*
+- Coming Soon
+
+### *Class 05 Reading*
+- Coming Soon
+
+### *Class 06 Reading*
+- Coming Soon
+
+### *Class 07 Reading*
+- Coming Soon
+
+### *Class 08 Reading*
+- Coming Soon
+
+### *Class 09 Reading*
+- Coming Soon
+
+### *Class 10 Reading*
+- Coming Soon
+
+### *Class 11 Reading*
+- Coming Soon
+
+### *Class 12 Reading*
+- Coming Soon
+
+### *Class 13 Reading*
+- Coming Soon
+
+### *Class 14 Reading*
+- Coming Soon
+
+### *Class 15 Reading*
+- Coming Soon
+
+### *Class 16 Reading*
+- Coming Soon
+
+### *Class 17 Reading*
+- Coming Soon
+
+### *Class 18 Reading*
+- Coming Soon
+
+### *Class 19 Reading*
+- Coming Soon
+
+### *Class 20 Reading*
+- Coming Soon
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- You can use the [editor on GitHub](https://github.com/testOrg762/reading-notes/edit/main/README.md) to maintain and preview the content for your website in Markdown files. -->
+
+
+<!-- Syntax highlighted code block -->
+
+<!-- # Header 1
 ## Header 2
 ### Header 3
 
@@ -21,17 +89,8 @@ Syntax highlighted code block
 1. Numbered
 2. List
 
-**Bold** and _Italic_ and `Code` text
+**Bold** and _Italic_ and `Code` text -->
 
-[Link](url) and ![Image](src)
+<!-- [Link](url) and ![Image](src) -->
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/testOrg762/reading-notes/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
