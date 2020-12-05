@@ -4,7 +4,22 @@
 ## **Code 401** - _Advanced Software Development with Python_
 
 ### *Class 01 Reading*
-- Coming Soon
+
+#### Pain vs. Suffering
+
+- Pain of growth is different than suffering
+- One way to combat - keep your eye on the prize
+- Ask questions, seek answers, and find a remedy
+
+#### Beginner's guide to Big O Notations
+
+- O(1): An algorithm that will always execute in the same time (or space) regardless of the size of the input data set.
+- O(N): Algorithm whose performance will grow linearly and in direct proportion to the size of the input data set
+- O(N2): Performance is directly proportional to the square of the size of the input data set.
+- O(2N): Growth doubles with each additon to the input data set. (One of the worst case scenarios)
+
+- ![Big O Cheet sheet](https://www.bigocheatsheet.com/)
+- 
 
 ### *Class 02 Reading*
 - Coming Soon
