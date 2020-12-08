@@ -18,11 +18,34 @@
 - O(N2): Performance is directly proportional to the square of the size of the input data set.
 - O(2N): Growth doubles with each additon to the input data set. (One of the worst case scenarios)
 
-- ![Big O Cheet sheet](https://www.bigocheatsheet.com/)
-- 
+- ![Big O Cheat sheet](https://www.bigocheatsheet.com/)
+
+
+
+
 
 ### *Class 02 Reading*
-- Coming Soon
+
+#### In Tests We Trust — TDD with Python
+
+- Test-Driven Development is a strategy to think tests-first.
+- Tests can be considered as your living documentation, name of test should self-explain
+- Test file name should follow the same name of module name
+- AAA: Arrange, Act and Assert
+- *Arrange* organize the data needed to execute that piece of code (input)
+- *Act* execute the code being tested (exercise the behavior)
+- *Assert* check if the result (output) is the same as you were expecting
+- Write the test (fail), write the feature (pass), refactor
+
+#### Recursion
+
+- What is recursion (besides my worst nightmare?!)?
+- The process in which a function calls itself is called recursion and the corresponding function is called as recursive function.
+- Difference between direct and indirect recursion: 
+- *Direct* Calls function directly
+- *Indirect* Calls function through another function
+- *Tail Recursion* is when that function is the last thing to be called
+
 
 ### *Class 03 Reading*
 - Coming Soon
