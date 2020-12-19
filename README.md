@@ -138,9 +138,28 @@ Example:
 - Recursion can also be seen as self-referential function composition. We apply a function to an argument, then pass that result on as an argument to a second application of the same function, and so on. Repeatedly composing attach_head with itself is the same as attach_head calling itself repeatedly.
 - Python doesn’t have support for tail-call elimination. As a result, you can cause a stack overflow if you end up using more stack frames than the default call stack depth
 
+### *Linked List Reading*
 
+What is a data structure?
 
+- A data structure is a collection of data values, the relationships among them, and the functions or operations that can be applied to the data. 
+Examples include: variables, arrays, hashes, and objects
+How is a Linked List different from an array?
 
+Arrays are more rigid, more difficult to change & memory management
+
+- Arrays are static data structures where linked lists are dynamic
+
+What is one benefit a Linked List has over an array?
+
+- It is simpler to change a linked list than it is to change an array
+What data does a Node hold in a Doubly Linked List?
+
+- Sequentially linked records
+
+What would you use to implement a Linked List data type? (object, function, class, variable…?)
+
+- I believe we’d use a class to create a constructor for adding items to the linked list.
 
 
 
