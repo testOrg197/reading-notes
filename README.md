@@ -161,28 +161,49 @@ What would you use to implement a Linked List data type? (object, function, clas
 
 - I believe we’d use a class to create a constructor for adding items to the linked list.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### *Class 05 Reading*
-- Coming Soon
+
+#### Game of Greed
+
+[Random Module Reading](https://www.pythonforbeginners.com/random/how-to-use-the-random-module-in-python)\
+
+- When to use the Random Module: 
+    - We want the computer to pick a random number in a given range Pick a random element from a list, pick a random card from a deck, flip a coin etc. 
+    - When making your password database more secure or powering a random page feature of your website.
+
+- _Randint_: Randint accepts two parameters: a lowest and a highest number.
+RANDINT - ex. will return 1-5
+import random
+print random.randint(0, 5)
+
+- _Random_:
+RANDOM - ex. will return 0-100
+import random
+random.random() * 100
+
+- _Choice_: Generate a random value from the sequence sequence.
+CHOICE: Used for choosing a random element from a list.
+random.choice( ['red', 'black', 'green'] ).
+
+- _Shuffle_: The shuffle function, shuffles the elements in list in place, so they are in a random order.
+SHUFFLE - ex will return something like [[9], [2], [7], [0], [4], [5], [3], [1], [8], [6]]
+from random import shuffle
+x = [[i] for i in range(10)]
+shuffle(x)
+
+- _Randrange_: Generate a randomly selected element from range(start, stop, step)
+
+import random
+for i in range(3):
+    print random.randrange(0, 101, 5)
+
+
+
+
+
+
+
+
 
 ### *Class 06 Reading*
 - Coming Soon
