@@ -165,7 +165,7 @@ What would you use to implement a Linked List data type? (object, function, clas
 
 #### Game of Greed
 
-[Random Module Reading](https://www.pythonforbeginners.com/random/how-to-use-the-random-module-in-python)\
+[Random Module Reading](https://www.pythonforbeginners.com/random/how-to-use-the-random-module-in-python)
 
 - When to use the Random Module: 
     - We want the computer to pick a random number in a given range Pick a random element from a list, pick a random card from a deck, flip a coin etc. 
@@ -198,10 +198,24 @@ for i in range(3):
     print random.randrange(0, 101, 5)
 
 
+[Risk Management](https://www.edureka.co/blog/risk-analysis-in-software-testing/)
 
+- The probability of any unwanted incident is defined as Risk.
+- In Software Testing, risk analysis is the process of identifying the risks in applications or software that you built and prioritizing them to test.
 
+- In any software, using risk analysis at the beginning of a project highlights the potential problem areas
+- _High_: means the effect of the risk would be very high and non-tolerable. The company might face loss.
+- _Medium_: it is tolerable but not desirable. The company may suffer financially but there is a limited risk.
+- _Low_: it is tolerable. There lies little or no external exposure or no financial loss.
 
+- _Business Risks_: This risk is the most common risk associated with our topic. It is the risk that may come from your company or your customer, not from your project.
+- _Testing Risks_: You should be well acquainted with the platform you are working on, along with the software testing tools being used.
+- _Premature Release Risk_: a fair amount of knowledge to analyze the risk associated with releasing unsatisfactory or untested software is required
+- _Software Risks_: You should be well versed with the risks associated with the software development process.
 
+- _Effect_ – To assess risk by Effect. In case you identify a condition, event or action and try to determine its impact.
+- _Cause_ – To assess risk by Cause is opposite of by Effect. Initialize scanning the problem and reach to the point that could be the most probable reason behind that.
+- _Likelihood_ – To assess risk by Likelihood is to say that there is a probability that a requirement won’t be satisfied.
 
 
 
