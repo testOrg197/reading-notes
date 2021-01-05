@@ -192,11 +192,9 @@ x = [[i] for i in range(10)]
 shuffle(x)
 
 - _Randrange_: Generate a randomly selected element from range(start, stop, step)
-
 import random
 for i in range(3):
     print random.randrange(0, 101, 5)
-
 
 [Risk Management](https://www.edureka.co/blog/risk-analysis-in-software-testing/)
 
@@ -218,12 +216,88 @@ for i in range(3):
 - _Likelihood_ – To assess risk by Likelihood is to say that there is a probability that a requirement won’t be satisfied.
 
 
-
-### *Class 06 Reading*
-- Coming Soon
-
 ### *Class 07 Reading*
-- Coming Soon
+
+#### Game of Greed 2 
+
+- *Python Scope* -  https://realpython.com/python-scope-legb-rule/
+
+- Using Python scope will help you avoid or minimize bugs related to name collision as well as bad use of global names across your programs.
+
+* Assignments	x = value
+* Import operations	import module or from module import name
+* Function definitions	def my_func(): ...
+* Argument definitions in the context of functions	def my_func(arg1, arg2,... argN): ...
+* Class definitions	class MyClass: ...
+
+
+- Python resolves names using the so-called LEGB rule, which is named after the Python scope for names.
+- The letters in LEGB stand for **Local, Enclosing, Global, and Built-in.**
+
+
+- Local (or function) scope is the code block or body of any Python function or lambda expression. This Python scope contains the names that you define inside the function. These names will only be visible from the code of the function. It’s created at function call, not at function definition, so you’ll have as many different local scopes as function calls. This is true even if you call the same function multiple times, or recursively. Each call will result in a new local scope being created.
+
+- Enclosing (or nonlocal) scope is a special scope that only exists for nested functions. If the local scope is an inner or nested function, then the enclosing scope is the scope of the outer or enclosing function. This scope contains the names that you define in the enclosing function. The names in the enclosing scope are visible from the code of the inner and enclosing functions.
+
+- Global (or module) scope is the top-most scope in a Python program, script, or module. This Python scope contains all of the names that you define at the top level of a program or a module. Names in this Python scope are visible from everywhere in your code.
+
+- Built-in scope is a special Python scope that’s created or loaded whenever you run a script or open an interactive session. This scope contains names such as keywords, functions, exceptions, and other attributes that are built into Python. Names in this Python scope are also available from everywhere in your code. It’s automatically loaded by Python when you run a program or script.
+
+
+1. Global: With this statement, you can define a list of names that are going to be treated as global names. The statement consists of the global keyword followed by one or more names separated by commas. You can also use multiple global statements with a name (or a list of names). All the names that you list in a global statement will be mapped to the global or module scope in which you define them.
+
+>>> counter = 0  # A global name
+>>> def update_counter():
+...     counter = counter + 1  # Fail trying to update counter
+
+</br></br>
+>>> counter = 0  # A global name
+>>> def update_counter():
+...     global counter  # Declare counter as global
+...     counter = counter + 1  # Successfully update the counter
+
+- With the statement global counter, you’re telling Python to look in the global scope for the name counter. This way, the expression counter = counter + 1 doesn’t create a new name in the function scope, but updates it in the global scope.
+
+2. Nonlocal: nonlocal names can be accessed from inner functions, but not assigned or updated. If you want to modify them, then you need to use a nonlocal statement. With a nonlocal statement, you can define a list of names that are going to be treated as nonlocal.
+
+>>> def func():
+...     var = 100  # A nonlocal variable
+...     def nested():
+...         nonlocal var  # Declare var as nonlocal
+...         var += 100
+
+- You can’t use a nonlocal statement in either the global scope or in a local scope.
+- You can’t use nonlocal to create lazy nonlocal names. Names must already exist in the enclosing Python scope if you want to use them as nonlocal names
+
+- **A closure is an inner or nested function that carries information about its enclosing scope, even though this scope has completed its execution.**
+>>> def power_factory(exp):
+...     def power(base):
+...         return base ** exp
+...     return power
+...
+>>> square = power_factory(2)
+>>> square(10)
+100
+>>> cube = power_factory(3)
+>>> cube(10)
+1000
+>>> cube(5)
+125
+>>> square(15)
+225
+
+- In the above example, the inner function power() is first assigned to square. In this case, the function remembers that exp equals 2. In the second example, you call power_factory() using 3 as an argument. This way, cube holds a function object, which remembers that exp is 3. Notice that you can freely reuse square and cube because they don’t forget their respective state information.
+
+
+
+
+
+
+
+
+
+
+
 
 ### *Class 08 Reading*
 - Coming Soon
