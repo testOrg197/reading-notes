@@ -288,19 +288,75 @@ for i in range(3):
 
 - In the above example, the inner function power() is first assigned to square. In this case, the function remembers that exp equals 2. In the second example, you call power_factory() using 3 as an argument. This way, cube holds a function object, which remembers that exp is 3. Notice that you can freely reuse square and cube because they don’t forget their respective state information.
 
-
-
-
-
-
-
-
-
-
-
-
 ### *Class 08 Reading*
-- Coming Soon
+
+- #### List Comprehensions 
+(https://www.pythonforbeginners.com/basics/list-comprehensions-in-python)
+
+- List comprehensions provide a concise way to create lists.
+
+
+- It consists of brackets containing an expression followed by a for clause, then zero or more for or if clauses. 
+- The expressions can be anything, meaning you can put in all kinds of objects in lists.
+
+ORIGINAL
+`new_list = []`
+`for i in old_list:`
+    `if filter(i):`
+        `new_list.append(expressions(i))`
+
+NEW
+`new_list = [expression(i) for i in old_list if filter(i)]`
+
+##### Syntax:
+`for item in list:`
+    `if conditional:`
+        `expression`
+
+    I
+    I
+    V
+`[ expression for item in list if conditional ]`
+
+*new_list*
+The new list (result).
+
+*expression(i)*
+Expression is based on the variable used for each element in the old list.
+
+*for i in old_list*
+The word for followed by the variable name to use, followed by the word in the
+old list.
+
+*if filter(i)*
+Apply a filter with an If-statement.
+
+
+`new_range = [i * i for i in range(5) if i % 2 == 0]`
+
+Which corresponds to:
+
+`*result* = [*transform* *iteration* *filter* ]`
+
+The * operator is used to repeat. The filter part answers the question if the
+item should be transformed.
+
+<br>
+The output should be: [‘t’, ‘i’, ‘a’, ‘l’, ‘o’, ‘w’]
+
+- `listOfWords = ["this","is","a","list","of","words"]`
+- `items = [ word[0] for word in listOfWords ]`
+- `print items`
+
+
+
+
+
+
+
+
+
+
 
 ### *Class 09 Reading*
 - Coming Soon
