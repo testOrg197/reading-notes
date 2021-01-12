@@ -389,7 +389,22 @@ A context manager is a simple “protocol” (or interface) that your object nee
 
 
 ### *Class 10 Reading*
-- Coming Soon
+
+#### Stacks & Queue Quiz  
+1. Come up with an application scenario where you would want to use a stack.
+- Reversing a word
+
+2. Come up with an application scenario where you would want to use a queue.
+- A ticket buying app or pre-sale vendor thath puts users into an order
+
+3. Why are pop, push, enqueue and dequeue always O(1)?
+- It takes the same amount of time no matter how many Nodes (n) you have in the stack.
+
+4. Why do stacks and queues not have traversal or searching operations?
+- These data structures do have search functionality, Deapth-First & Breadth-First Searches. ([Source](https://www.cs.cmu.edu/~adamchik/15-121/lectures/Stacks%20and%20Queues/Stacks%20and%20Queues.html))
+
+<br><br>
+<br><br>
 
 ### *Class 11 Reading*
 - Coming Soon
