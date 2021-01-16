@@ -423,6 +423,7 @@ A context manager is a simple “protocol” (or interface) that your object nee
 ---
 
 ### *Class 11 Reading*
+
 #### JupyterLab 
 https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html
 
@@ -439,13 +440,21 @@ https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html
 
 - JupyterLab offers customizable keyboard shortcuts and the ability to use key maps from vim, emacs, and Sublime Text in the text editor.
 
+#### Numpy
+https://www.dataquest.io/blog/numpy-tutorial-python/
 
+- NumPy is a commonly used Python data analysis package
+- Almost every data analysis or machine learning package for Python leverages NumPy in some way.
 
+- In a NumPy array, the number of dimensions is called the rank, and each dimension is called an axis. So the rows are the first axis, and the columns are the second axis.
 
+- We can check the number of rows and columns in our data using the shape property of NumPy arrays. Ex: wines.shape = (1599, 12)
 
+- You can create an array where every element is zero. The below code will create an array with 3 rows and 4 columns, where every element is 0, using numpy.zeros: 
+```import numpy as np```
+```empty_array = np.zeros((3,4)) empty_array```
 
-
-
+- You can also create an array where each element is a random number using numpy.random.rand (Ex: np.random.rand(3,4))
 
 
 
