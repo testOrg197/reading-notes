@@ -287,6 +287,10 @@ for i in range(3):
 225
 
 - In the above example, the inner function power() is first assigned to square. In this case, the function remembers that exp equals 2. In the second example, you call power_factory() using 3 as an argument. This way, cube holds a function object, which remembers that exp is 3. Notice that you can freely reuse square and cube because they don’t forget their respective state information.
+</br></br>
+</br></br>
+
+---
 
 ### *Class 08 Reading*
 
@@ -347,6 +351,10 @@ The output should be: [‘t’, ‘i’, ‘a’, ‘l’, ‘o’, ‘w’]
 - `listOfWords = ["this","is","a","list","of","words"]`
 - `items = [ word[0] for word in listOfWords ]`
 - `print items`
+</br></br>
+</br></br>
+
+---
 
 ### *Class 09 Reading*
 
@@ -384,31 +392,74 @@ You can make an object callable like a regular function by adding the __call__ d
 
 - **Context Manager Support and the With Statement: __enter__, __exit__**
 A context manager is a simple “protocol” (or interface) that your object needs to follow so it can be used with the with statement. Basically all you need to do is add __enter__ and __exit__ methods to an object if you want it to function as a context manager.
+</br></br>
+</br></br>
 
-
-
+---
 
 ### *Class 10 Reading*
 
 #### Stacks & Queue Quiz  
+
 1. Come up with an application scenario where you would want to use a stack.
+
 - Reversing a word
 
 2. Come up with an application scenario where you would want to use a queue.
+
 - A ticket buying app or pre-sale vendor thath puts users into an order
 
 3. Why are pop, push, enqueue and dequeue always O(1)?
+
 - It takes the same amount of time no matter how many Nodes (n) you have in the stack.
 
 4. Why do stacks and queues not have traversal or searching operations?
+
 - These data structures do have search functionality, Deapth-First & Breadth-First Searches. ([Source](https://www.cs.cmu.edu/~adamchik/15-121/lectures/Stacks%20and%20Queues/Stacks%20and%20Queues.html))
 
-<br><br>
-<br><br>
+</br></br>
+</br></br>
+
+---
 
 ### *Class 11 Reading*
-- Coming Soon
+#### JupyterLab 
+https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html
 
+- JupyterLab is a next-generation web-based user interface for Project Jupyter
+- Work with documents and activities such as Jupyter notebooks, text editors, terminals, and custom components in a flexible, integrated, and extensible manner
+
+* Code Consoles provide transient scratchpads for running code interactively, with full support for rich output. A code console can be linked to a notebook kernel as a computation log from the notebook, for example.
+
+* Kernel-backed documents enable code in any text file (Markdown, Python, R, LaTeX, etc.) to be run interactively in any Jupyter kernel.
+
+* Notebook cell outputs can be mirrored into their own tab, side by side with the notebook, enabling simple dashboards with interactive controls backed by a kernel.
+
+* Multiple views of documents with different editors or viewers enable live editing of documents reflected in other viewers. For example, it is easy to have live preview of Markdown, Delimiter-separated Values, or Vega/Vega-Lite documents.
+
+- JupyterLab offers customizable keyboard shortcuts and the ability to use key maps from vim, emacs, and Sublime Text in the text editor.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</br></br>
+</br></br>
 ### *Class 12 Reading*
 - Coming Soon
 
