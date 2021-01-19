@@ -456,21 +456,69 @@ https://www.dataquest.io/blog/numpy-tutorial-python/
 
 - You can also create an array where each element is a random number using numpy.random.rand (Ex: np.random.rand(3,4))
 
-
-
-
-
-
-
-
-
-
-
-
 </br></br>
 </br></br>
+
 ### *Class 12 Reading*
-- Coming Soon
+
+#### Pandas in 10 
+https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html
+
+- Pandas is a software library written for the Python programming language for data manipulation and analysis
+- Pandas offers data structures and operations for manipulating numerical tables and time series
+
+###### Object creation
+###### Viewing data
+###### Selection
+- Getting
+- Selection by label
+- Selection by position
+- Boolean indexing
+- Setting
+###### Missing data
+###### Operations
+- Stats
+- Apply
+- Histogramming
+- String Methods
+###### Merge
+- Concat
+- Join
+###### Grouping
+###### Reshaping
+- Stack
+- Pivot tables
+###### Time series
+###### Categoricals
+###### Plotting
+###### Getting data in/out
+- CSV
+- HDF5
+- Excel
+###### Gotchas
+
+
+</br></br>
+</br></br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### *Class 13 Reading*
 - Coming Soon
