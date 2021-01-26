@@ -501,30 +501,199 @@ https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html
 </br></br>
 </br></br>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### *Class 13 Reading*
-- Coming Soon
+
+#### Linear Regression
+- https://bigdata-madesimple.com/how-to-run-linear-regression-in-python-scikit-learn/
+
+- Scikit-learn is a powerful Python module for machine learning. 
+** Can do regression, classification, clustering, model selection and dimensionality reduction
+- sklearn.linear_model module: Contains “methods intended for regression in which the target value is expected to be a linear combination of the input variables”.
+
+- For Later [UCI Machine Learning Repository](http://archive.ics.uci.edu/ml/)
+
+- First step: Import the required Python libraries into Ipython Notebook.
+`%matplotlib inline`
+`import numpy as np`
+`import pandas as pd`
+`import scipy.stats as stats`
+`import matplotlib as plt`
+`import sklearn`
+
+- Import Boston data set into Ipython notebook and store it in a variable called boston.
+`from sklearn.datasets import load_boston`
+`boston = load_boston`
+
+- boston is a dictionary - to explore keys:
+`boston.keys()`
+
+- Print the feature names of boston data set.
+`print boston.feature_names`
+
+### The goal of this exercise is to predict the housing prices in boston region using the features given.
+
+- Print the description of this data set to know more about it.
+`print boston.DESCR`
+
+- Convert boston.data into a pandas data frame.
+`bos = pd.DataFrame(boston.data)`
+`bos.head()`
+
+- Replace tthe column names with the feature names.
+`bos.columns = boston.feature_names`
+`bos.head()`
+
+- boston.target contains the housing prices.
+`boston.target[:5]`
+
+- Add these target prices to the bos data frame.
+``bos['PRICE'] = boston.target
+
+- Y = boston housing price(also called “target” data in Python)
+- X = all the other features (or independent variables)
+
+- Import linear regression from sci-kit learn module. Then I am going to drop the price column as I want only the parameters as my X values. I am going to store linear regression object in a variable called lm.
+`from sklearn.linear_model import LinearRegressiom`
+`X=bos.drop('PRICE', axis = 1)`
+
+`lm = LinearRegression()`
+`lm`
+
+- To look inside the linear regression object, you can do so by typing LinearRegression. and the press `<tab>` key. This will give a list 
+- You can also explore the functions inside lm object by pressing `lm.<tab>`
+
+
+*Important functions to keep in mind while fitting a linear regression model are:*
+- lm.fit() -> fits a linear model
+- lm.predict() -> Predict Y using the linear model with estimated coefficients
+- lm.score() -> Returns the coefficient of determination (R^2). A measure of how well observed outcomes are replicated by the model, as the proportion of total variation of outcomes explained by the model.
+- coef_ gives the coefficients and .intercept_ gives the estimated intercepts
+
+</br></br>
+</br></br>
 
 ### *Class 14 Reading*
-- Coming Soon
+
+#### Matplotlib tutorial
+https://github.com/rougier/matplotlib-tutorial
+
+- matplotlib is the single most used Python package for 2D-graphics
+- an enhanced interactive Python shell containing named inputs and outputs, access to shell commands, improved debugging and much more.
+
+- **pyplot** provides a convenient interface to the matplotlib object-oriented plotting library.
+- The majority of plotting commands in pyplot have Matlab(TM) analogs with similar argument
+
+**Simple Plot Example**
+
+- The first step is to get the data for the sine and cosine functions:
+`import numpy as np`
+`X = np.linspace(-np.pi, np.pi, 256, endpoint=True)`
+`C, S = np.cos(X), np.sin(X)`
+
+- X is now a NumPy array with 256 values ranging from -π to +π (included). C is the cosine (256 values) and S is the sine (256 values).
+
+- To run the example, you can download each of the examples and run it using:
+
+`$ python exercice_1.py`
+
+- We want to have the cosine in blue and the sine in red and a slightly thicker line for both of them. We'll also slightly alter the figure size to make it more horizontal.
+`...`
+`plt.figure(figsize=(10,6), dpi=80)`
+`plt.plot(X, C, color="blue", linewidth=2.5, linestyle="-")`
+`plt.plot(X, S, color="red",  linewidth=2.5, linestyle="-")`
+`...`
+
+- Current limits of the figure are a bit too tight and we want to make some space in order to clearly see all data points.
+
+`...`
+`plt.xlim(X.min()*1.1, X.max()*1.1)`
+`plt.ylim(C.min()*1.1, C.max()*1.1)`
+`...`
+
+- Current ticks are not ideal because they do not show the interesting values (+/-π,+/-π/2) for sine and cosine. We'll change them such that they show only these values.
+`...`
+`plt.xticks( [-np.pi, -np.pi/2, 0, np.pi/2, np.pi])`
+`plt.yticks([-1, 0, +1])`
+`...`
+
+- When we set tick values, we can also provide a corresponding label in the second argument list. Note that we'll use latex to allow for nice rendering of the label.
+`...`
+`plt.xticks([-np.pi, -np.pi/2, 0, np.pi/2, np.pi],`
+`       [r'$-\pi$', r'$-\pi/2$', r'$0$', r'$+\pi/2$', r'$+\pi$'])`
+
+`plt.yticks([-1, 0, +1],`
+`       [r'$-1$', r'$0$', r'$+1$'])`
+`...`
+
+- Spines are the lines connecting the axis tick marks and noting the boundaries of the data area. We'll change that since we want to have them in the middle.
+- Since there are four of them (top/bottom/left/right), we'll discard the top and right by setting their color to none and we'll move the bottom and left ones to coordinate 0 in data space coordinates.
+
+`...`
+`ax = plt.gca()`
+`ax.spines['right'].set_color('none')`
+`ax.spines['top'].set_color('none')`
+`ax.xaxis.set_ticks_position('bottom')`
+`ax.spines['bottom'].set_position(('data',0))`
+`ax.yaxis.set_ticks_position('left')`
+`ax.spines['left'].set_position(('data',0))`
+`...`
+
+- add a legend in the upper left corner
+
+`...`
+`plt.plot(X, C, color="blue", linewidth=2.5, linestyle="-", label="cosine")`
+`plt.plot(X, S, color="red",  linewidth=2.5, linestyle="-", label="sine")`
+
+`plt.legend(loc='upper left', frameon=False)`
+`...`
+
+- To annotate some interesting points use the annotate command
+- We choose the 2π/3 value and we want to annotate both the sine and the cosine.
+`...`
+`t = 2*np.pi/3`
+`plt.plot([t,t],[0,np.cos(t)], color ='blue', linewidth=1.5, linestyle="--")`
+`plt.scatter([t,],[np.cos(t),], 50, color ='blue')`
+
+`plt.annotate(r'$\sin(\frac{2\pi}{3})=\frac{\sqrt{3}}{2}$',`
+`             xy=(t, np.sin(t)), xycoords='data',`
+`             xytext=(+10, +30), textcoords='offset points', fontsize=16,`
+`             arrowprops=dict(arrowstyle="->", connectionstyle="arc3,rad=.2"))`
+
+`plt.plot([t,t],[0,np.sin(t)], color ='red', linewidth=1.5, linestyle="--")`
+`plt.scatter([t,],[np.sin(t),], 50, color ='red')`
+
+`plt.annotate(r'$\cos(\frac{2\pi}{3})=-\frac{1}{2}$',`
+`             xy=(t, np.cos(t)), xycoords='data',`
+`             xytext=(-90, -50), textcoords='offset points', fontsize=16,`
+`             arrowprops=dict(arrowstyle="->", connectionstyle="arc3,rad=.2"))`
+`...`
+
+- The tick labels are now hardly visible because of the blue and red lines. We can make them bigger and we can also adjust their properties such that they'll be rendered on a semi-transparent white background. This will allow us to see both the data and the labels.
+`...`
+`for label in ax.get_xticklabels() + ax.get_yticklabels():`
+`    label.set_fontsize(16)`
+`    label.set_bbox(dict(facecolor='white', edgecolor='None', alpha=0.65 ))`
+`...`
+
+- We can have more control over the display using figure, subplot, and axes explicitly
+- When we call plot, matplotlib calls gca() to get the current axes and gca in turn calls gcf() to get the current figure. If there is none it calls figure() to make one, strictly speaking, to make a subplot(111). Let's look at the details.
+
+- A figure is the windows in the GUI that has "Figure #" as title. Figures are numbered starting from 1 as opposed to the normal Python way starting from 0. This is clearly MATLAB-style. There are several parameters that determine what the figure looks like:
+
+Argument    Default	            Description
+num	        1	                number of figure
+figsize	    figure.figsize      figure size in in inches (width, height)
+dpi	        figure.dpi	        resolution in dots per inch
+facecolor	figure.facecolor    color of the drawing background
+edgecolor	figure.edgecolor    color of edge around the drawing background
+frameon	    True	            draw figure frame or not
+
+
+- You can close a figure programmatically by calling close.
+- **Depending on the argument it closes (1) the current figure (no argument), (2) a specific figure (figure number or figure instance as argument), or (3) all figures (all as argument).**
+
+</br></br>
+</br></br>
 
 ### *Class 15 Reading*
 - Coming Soon
