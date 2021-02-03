@@ -712,7 +712,87 @@ frameon	    True	            draw figure frame or not
 </br></br>
 
 ### *Class 16 Reading*
-- Coming Soon
+
+#### Web Scrape with Python in 4 Minutes
+- https://towardsdatascience.com/how-to-web-scrape-with-python-in-4-minutes-bc49186a8460
+
+- Web scraping is a technique to automatically access and extract large amounts of information from a website
+- Turnstile data: 
+
+- It would be torturous to manually right click on a hundred links and save to your desktop. Luckily, there’s web-scraping!
+
+- Inspect the Website: Figure out where we can locate the links to the files we want to download inside the multiple levels of HTML tags.
+
+1. On the website, right click and click on “Inspect”. This allows you to see the raw code behind the site.
+
+- Notice that on the top left of the console, there is an arrow symbol. Click on this arrow and then click on an area of the site itself, the code for that particular item will be highlighted in the console
+
+2. Import the following libraries.
+import requests
+import urllib.request
+import time
+from bs4 import BeautifulSoup
+
+3. Set the url to the website and access the site with our requests library.
+url = 'http://web.mta.info/developers/turnstile.html'
+response = requests.get(url)
+
+- If the access was successful, you should see the following output: <Response [200]>
+
+4. Parse the html with BeautifulSoup so that we can work with a nicer, nested BeautifulSoup data structure.
+soup = BeautifulSoup(response.text, “html.parser”)
+^^This code gives us every line of code that has an `<a>` tag.
+
+5. To extract the actual link that we want. Let’s test out the first link.
+`one_a_tag = soup.findAll(‘a’)[38]`
+`link = one_a_tag[‘href’]`
+
+6. We can use our urllib.request library to download this file path to our computer. We provide request.urlretrieve with two parameters: file url and the filename. For my files, I named them “turnstile_180922.txt”, “turnstile_180901”, etc.
+
+`download_url = 'http://web.mta.info/developers/'+ link`
+`urllib.request.urlretrieve(download_url,'./'+link[link.find('/turnstile_')+1:])`
+
+7. *Include this line of code so that we can pause our code for a second so that we are not spamming the website with requests. This helps us avoid getting flagged as a spammer.*
+`time.sleep(1)`
+
+8. Download the entire set of data files with a for loop. The code below contains the entire set of code for web scraping the NY MTA turnstile data.
+`# Import libraries`
+`import requests`
+`import urllib.request`
+`import time`
+`from bs4 import BeautifulSoup`
+
+`# Set the URL you want to webscrape from`
+`url = 'http://web.mta.info/developers/turnstile.html'`
+
+`# Connect to the URL`
+`response = requests.get(url)`
+
+`# Parse HTML and save to BeautifulSoup object¶`
+`soup = BeautifulSoup(response.text, "html.parser")`
+
+`# To download the whole data set, let's do a for loop through all a tags`
+`line_count = 1 #variable to track what line you are on`
+`for one_a_tag in soup.findAll('a'):  #'a' tags are for links`
+    `if line_count >= 36: #code for text files starts at line 36`
+        `link = one_a_tag['href']`
+        `download_url = 'http://web.mta.info/developers/'+ link`
+        `urllib.request.urlretrieve(download_url,'./'+link[link.find('/turnstile_')+1:])`
+        `time.sleep(1) #pause the code for a sec`
+    `#add 1 for next line`
+    `line_count +=1`
+
+
+
+
+
+
+
+
+
+
+</br></br>
+</br></br>
 
 ### *Class 17 Reading*
 - Coming Soon
