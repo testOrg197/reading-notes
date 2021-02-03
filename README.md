@@ -784,8 +784,14 @@ soup = BeautifulSoup(response.text, “html.parser”)
 
 
 
+- #### Wikipedia Web Scraping Info
+- https://en.wikipedia.org/wiki/Web_scraping
 
+- Web scraping, web harvesting, or web data extraction is data scraping used for extracting data from websites
+- It is a form of copying, in which specific data is gathered and copied from the web, typically into a central local database or spreadsheet, for later retrieval or analysis.
 
+- Web scraping a web page involves fetching it and extracting from it.
+- *Fetching*: Downloading of a page (which a browser does when a user views a page)
 
 
 
