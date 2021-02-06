@@ -801,7 +801,67 @@ soup = BeautifulSoup(response.text, “html.parser”)
 </br></br>
 
 ### *Class 17 Reading*
-- Coming Soon
+
+### Encryption, decryption, and cracking
+- https://www.khanacademy.org/computing/computers-and-internet/xcae6f4a7ff015e7d:online-data-security/xcae6f4a7ff015e7d:data-encryption-techniques/a/encryption-decryption-and-code-cracking
+
+- Caesar Cipher: One of the earliest encryption techniques. 
+- Messages would be shifted in 3's (According to historical records, Caesar always used a shift of 3. As long as his message recipient knew the shift amount, it was trivial for them to decode the message)
+
+
+- There are three main techniques : frequency analysis, known plaintext, and brute force
+- Human languages tend to use some letters more than others. For example, "E" is the most popular letter in the English language.
+
+- Another term for the original unencrypted message is plaintext.
+
+- Encryption: scrambling the data according to a secret key (Alphabet shift).
+- Decryption: recovering the original data from scrambled data by using the secret key.
+- Code cracking: uncovering the original data without knowing the secret, by using a variety of clever techniques.
+
+
+
+
+
+
+
+
+
+
+</br></br>
+</br></br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### *Class 18 Reading*
 - Coming Soon
