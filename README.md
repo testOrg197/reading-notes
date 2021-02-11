@@ -818,59 +818,74 @@ soup = BeautifulSoup(response.text, “html.parser”)
 - Decryption: recovering the original data from scrambled data by using the secret key.
 - Code cracking: uncovering the original data without knowing the secret, by using a variety of clever techniques.
 
-
-
-
-
-
-
-
-
-
 </br></br>
 </br></br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ### *Class 18 Reading*
-- Coming Soon
 
-### *Class 19 Reading*
-- Coming Soon
+#### Python Regular Expression Tutorial
+- https://www.datacamp.com/community/tutorials/python-regular-expression-tutorial
 
-### *Class 20 Reading*
-- Coming Soon
+- Regex: A sequence of characters used to check whether a pattern exists in a given text (string) or not
+- They help in manipulating textual data, which is often a prerequisite for data science projects involving text mining
+- In Python, regular expressions are supported by the `re` module
+
+- EXAMPLE: compile(), search(), findall(), sub() for search and replace, split()
+
+- Ordinary characters are the simplest regular expressions. They match themselves exactly and do not have a special meaning in their regular expression syntax.
+
+- EXAMPLE: 'A', 'a', 'X', '5'.
+
+- The match() function returns a match object if the text matches the pattern. Otherwise, it returns None
+
+- Starting a str with `r` (EX. r"Cookie"): This is called a raw string literal. It changes how the string literal is interpreted. Such literals are stored as they appear.
+
+- EXAMPLE:  \ is just a backslash when prefixed with an r rather than being interpreted as an escape sequence
+
+- Special characters are characters that do not match themselves as seen but have a special meaning when used in a regular expression.
+- They can be thought of as reserved metacharacters that denote something else and not what they look like
+
+- `.` - A period. Matches any single character except the newline character.
+- `^` - A caret. Matches the start of the string.
+- `$` - Matches the end of string.
+- `[abc]` - Matches a or b or c.
+- `[a-zA-Z0-9]` - Matches any letter from (a to z) or (A to Z) or (0 to 9)
+- `\` - Backslash:
+    - If the character following the backslash is a recognized escape character, then the special meaning of the term is taken (Scenario 1)
+    - Else if the character following the \ is not a recognized escape character, then the \ is treated like any other character and passed through (Scenario 2).
+    - \ can be used in front of all the metacharacters to remove their special meaning (Scenario 3)
+- `\w` - Lowercase 'w'. Matches any single letter, digit, or underscore.
+- `\W`- Uppercase 'W'. Matches any character not part of \w (lowercase w).
+
+- `\s` - Lowercase 's'. Matches a single whitespace character like: space, newline, tab, return.
+- `\S` - Uppercase 'S'. Matches any character not part of \s (lowercase s).
+
+- `\d` - Lowercase d. Matches decimal digit 0-9. The + symbol used after the \d is used for repetition
+- `\D` - Uppercase d. Matches any character that is not a decimal digit.
+
+- `\t` - Lowercase t. Matches tab.
+- `\n` - Lowercase n. Matches newline.
+- `\r` - Lowercase r. Matches return.
+- `\A` - Uppercase a. Matches only at the start of the string. Works across multiple lines as well.
+- `\Z` - Uppercase z. Matches only at the end of the string.
+
+- `\b` - Lowercase b. Matches only the beginning or end of the word
+
+
+- `+` Checks if the preceding character appears one or more times.
+- `*` Checks if the preceding character appears zero or more times.
+- `?` Checks if the preceding character appears exactly zero or one time. Specifies a non-greedy version of +, *
+- `{ }` Checks for an explicit number of times.
+- `( )` Creates a group when performing matches.
+- `< >` Creates a named group when performing matches.
+
+- IGNORECASE (I) - Allows case-insensitive matches.
+- DOTALL (S) - Allows . to match any character, including newline.
+- MULTILINE (M) - Allows start of string (^) and end of string ($) anchor to match newlines as well.
+- VERBOSE (X) - Allows you to write whitespace and comments within a regular expression to make it more readable.
+</br></br>
+</br></br>
+
 
 
 
