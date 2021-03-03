@@ -923,6 +923,105 @@ soup = BeautifulSoup(response.text, “html.parser”)
 - One of the most powerful parts of Django is its automatic admin interface. It reads metadata in your models to provide a powerful and production-ready interface that content producers can immediately use to start managing content on your site. It’s easy to set up and provides many hooks for customization.
 - Django offers full support for translating text into different languages, plus locale-specific formatting of dates, times, numbers, and time zones. It lets developers and template authors specify which parts of their apps should be translated or formatted for local languages and cultures, and it uses these hooks to localize Web applications for particular users according to their preferences.
 
+### *Class 27 Reading*
+
+#### Django Models
+- https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Models
+
+- Python objects are referred to as models
+- Models define the structure of stored data, including the field types and possibly also their maximum size, default values, selection list options, help text for documentation, label text for forms, etc
+- *Write your model structure and other code, and Django handles all the dirty work of communicating with the database for you.*
+
+##### Creating your model (Ex. Library) 
+
+- Models are usually defined in an application's models.py file.
+- They are implemented as subclasses of django.db.models.Model, and can include fields, methods and metadata.
+
+`from django.db import models`
+
+`class MyModelName(models.Model):`
+    `"""A typical class defining a model, derived from the Model class."""`
+
+    `# Fields`
+    `my_field_name = models.CharField(max_length=20, help_text='Enter field documentation')`
+
+    `# Metadata`
+    `class Meta:`
+        `ordering = ['-my_field_name']`
+
+    `# Methods`
+    `def get_absolute_url(self):`
+        `"""Returns the url to access a particular instance of MyModelName."""`
+        `return reverse('model-detail-view', args=[str(self.id)])`
+
+    `def __str__(self):`
+        `"""String for representing the MyModelName object (in Admin site etc.)."""`
+        `return self.my_field_name`
+
+- When designing your models it makes sense to have separate models for every "object" (a group of related information). In this case, the obvious objects are books, book instances, and authors.
+
+- Use models to represent selection-list options (e.g. like a drop down list of choices), rather than hard coding the choices into the website itself — this is recommended when all the options aren't known up front or may change
+- *Think about the relationships* - Django allows you to define relationships that are one to one (OneToOneField), one to many (ForeignKey) and many to many (ManyToManyField).
+- A model can have an arbitrary number of fields, of any type — each one represents a column of data that we want to store in one of our database tables. Each database record (row) will consist of one of each field value.
+- The field name is used to refer to it in queries and templates.
+
+
+
+- Replacing any underscores in the field name with a space (for example my_field_name would have a default label of my field name)
+- Note that when the label is used as a form label through Django frame, the first letter of the label is capitalised (for example my_field_name would be My field name).
+
+- **In every model you should define the standard Python class method __str__() to return a human-readable string for each object.**
+`def __str__(self):`
+    `return self.field_name`
+
+- `get_absolute_url()`, will return a URL for displaying individual model records on the website
+`def get_absolute_url(self):`
+    `"""Returns the url to access a particular instance of the model."""`
+    `return reverse('model-detail-view', args=[str(self.id)])`
+
+- Use ypur models to create, update, or delete records, and to run queries to get all records or particular subsets of records
+
+#### Django admin site
+- https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Admin_site
+
+- The Django admin application can use your models to automatically build a site area that you can use to create, view, update, and delete records.
+- The admin application can also be useful for managing data in production, depending on the type of website
+- After registering some models, you can create a new "superuser"
+
+
+- Register the models by copying the following text into the bottom of the file. This code imports the models and then calls admin.site.register to register each of them.
+`from .models import Author, Genre, Book, BookInstance`
+
+`admin.site.register(Book)`
+`admin.site.register(Author)`
+`admin.site.register(Genre)`
+`admin.site.register(BookInstance)`
+
+- In order to log into the admin site, we need a user account with Staff status enabled
+
+- On order to view and create records we also need this user to have permissions to manage all our objects.  You can create a "superuser" account that has full access to the site and all needed permissions using manage.py.
+- Call the following command, in the same directory as manage.py, to create the superuser. You will be prompted to enter a username, email address, and strong password.
+`python3 manage.py createsuperuser`
+
+`python3 manage.py runserver`
+
+- ***The admin site displays all our models, grouped by installed application. You can click on a model name to go to a screen that lists all its associated records, and you can further click on those records to edit them. You can also directly click the Add link next to each model to start creating a record of that type***
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
