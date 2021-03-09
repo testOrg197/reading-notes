@@ -1117,6 +1117,53 @@ Normal HTML:
 
 - Django provides generic form editing views that can do almost all the work to define pages that can create, edit, and delete records associated with a single model instance
 
+### *Class 29 Reading*
+
+#### Django Custom User
+
+- https://learndjango.com/tutorials/django-custom-user-model
+
+- For a real-world project, the official Django documentation highly recommends using a custom user model (login/logout) instead
+
+- Create and navigate into a dedicated directory called accounts for our code
+- Install Django
+- Make a new Django project called config
+- Make a new app accounts
+- Start the local web server
+
+    - Note that we did not run migrate to configure our database. It's important to wait until after we've created our new custom user model before doing so.
+
+
+
+- There are two modern ways to create a custom user model in Django: AbstractUser and AbstractBaseUser (AbstractBaseUser requires much, much more work)
+
+Creating our initial custom user model requires four steps:
+
+- update config/settings.py
+- create a new CustomUser model
+- create new UserCreation and UserChangeForm
+- update the admin
+
+- It's helpful to create a superuser that we can use to log in to the admin and test out log in/log out. On the command line type the following command and go through the prompts: (accounts) $ python manage.py createsuperuser
+
+- Update templates:
+
+    ```TEMPLATES = [
+        {
+            ...
+            'DIRS': [str(BASE_DIR.joinpath('templates'))], # new
+            ...
+        },
+    ]```
+
+- Then set the redirect links for log in and log out, which will both go to our home template. Add these two lines at the bottom of the file.
+*config/settings.py*
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home
+
+
+- DjangoX is an open-source Django starter framework that includes a custom user model, email/password by default instead of username/email/password, social authentication, and more.
+
 <!-- You can use the [editor on GitHub](https://github.com/testOrg762/reading-notes/edit/main/README.md) to maintain and preview the content for your website in Markdown files. -->
 
 <!-- Syntax highlighted code block -->
