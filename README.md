@@ -1164,6 +1164,27 @@ LOGOUT_REDIRECT_URL = 'home
 
 - DjangoX is an open-source Django starter framework that includes a custom user model, email/password by default instead of username/email/password, social authentication, and more.
 
+### *Class 30 Reading*
+
+#### Read: Hash Tables
+
+1. Is a HashTable useful for search or sorting operations? Why?
+
+    - Searching - If you have the key, you can easily retrieve the value. Previously we had to do a for loop over the array searching for the desired value.
+
+2. What makes a good hash function?
+
+    - One which never has any collisions 
+
+3. Why should you try to reduce the number of collisions?
+
+    - The keys can start over-writing each other causing data loss
+
+4. What is stored at each index of a HashTable? Why?
+
+    - key value pairs, so each entry can be easily accessed when needed.
+
+
 <!-- You can use the [editor on GitHub](https://github.com/testOrg762/reading-notes/edit/main/README.md) to maintain and preview the content for your website in Markdown files. -->
 
 <!-- Syntax highlighted code block -->
