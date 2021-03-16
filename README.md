@@ -1184,6 +1184,81 @@ LOGOUT_REDIRECT_URL = 'home
 
     - key value pairs, so each entry can be easily accessed when needed.
 
+### *Class 31 Reading*
+
+#### A Beginner's Guide to Docker
+- https://wsvincent.com/beginners-guide-to-docker/
+
+- Docker is a way to isolate and run entire applications regardless of if you are using a Mac, Windows, or Linux 
+- The entire development environment is isolated: programming language, software packages, databases, and more.
+- NO MORE VIRTUAL ENV.
+- Downside = Complexity
+- What’s the downside to a virtual machine? Size and speed
+
+- For most applications, a virtual machine provides far more resources than are needed and a container is more than sufficient.
+    - This, fundamentally, is what Docker is. A way to implement Linux containers
+
+- ANALOGY: homes and apartments
+    - Virtual Machines are like homes: stand-alone buildings with their own infrastructure including plumbing and heating, as well as a kitchen, bathrooms, bedrooms, and so on. Docker containers are like apartments: they share common infrastructure like plumbing and heating, but come in various sizes that match the exact needs of an owner.
+
+- Virtual environments are used to isolate Python software packages locally.
+
+- Check docker version :
+```docker --version```
+
+- Helpful docker commands: 
+    - ```docker run hello-world```
+    - ```docker info```
+    - ```docker image ls```
+    - ```$ cd ~/Desktop```
+        ```$ mkdir code && cd code```
+        ```$ mkdir python3.7 && cd python3.7```
+    - ```docker image build .```
+    - ``````
+
+- Dockerfiles are read from top-to-bottom. The first instruction must be the FROM command which lets us import a base image to use for our image.
+- In this demo we’ll be using the official Docker image for Python 3.7, specifically the alpine version which includes only the bare minimum needed to run Python. The alpine version takes up 78MB of space versus full Python’s 923MB so it is a good option to start with!
+- image layering and it exists for two main reasons. 
+    - First, each image layer is immutable–unchanged–like a git commit. This helps ensure consistency when two developers build the same image
+    - Second reason is performance.
+
+- Docker caches the steps in a Dockerfile to speed up subsequent builds. When a change is made to a step, all steps following it will be executed from scratch. For this reason, order matters in a Dockerfile
+- Typically you want to put code that won’t change often at the top and code that will change at the end
+
+- Establish a new Django project from scratch:
+    - ```mkdir djangoapp && cd djangoapp```
+- ```pipenv install django==3.0```
+- ```pipenv shell```
+- ```(djangoapp) $ django-admin startproject example_project .```
+- ```(djangoapp) $ python manage.py runserver```
+- ```touch Dockerfile```
+- ```touch docker-compose.yml```
+- ```docker-compose up --build```
+
+- Remember that order is extremely important for performance and managing image size
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- You can use the [editor on GitHub](https://github.com/testOrg762/reading-notes/edit/main/README.md) to maintain and preview the content for your website in Markdown files. -->
 
