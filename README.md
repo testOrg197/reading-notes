@@ -1237,17 +1237,61 @@ LOGOUT_REDIRECT_URL = 'home
 
 - Remember that order is extremely important for performance and managing image size
 
+#### Chapter 2: Library Website and API
+- https://djangoforapis.com/library-website-and-api/
+
+- We cannot build a web API with only Django Rest Framework; it always must be added to a project after Django itself has been installed and configured.
+
+- Django creates websites containing webpages, while Django REST Framework creates web APIs which are a collection of URL endpoints containing available HTTP verbs that return JSON
+- 1. dedicated directory on our computer to store the code.
+- 2. install Django
+- 3. shell up
+- 4. create a new project (```(library) $ django-admin startproject config .```)
+- 5. Check the tree (```brew install tree```)
+- 6. Run migrate to sync the database with Django’s default settings and start up the local Django web server. 
+    - (```(library) $ python manage.py migrate```)
+    - (```(library) $ python manage.py runserver```)
+- 7. Open a web browser to http://127.0.0.1:8000/ to confirm our project is successfully installed.
+- 8. create a books app ```(library) $ python manage.py startapp books```
+- 9. add the new app to our INSTALLED_APPS configuration (settings.py)
+- 10. run migrate to sync our database with the changes (```(library) $ python manage.py migrate```)
+- 11. Create a model in books/models.py, import models, create a Book class that extends it
+    - In this case, there are four fields: title, subtitle, author, and isbn. We also include a __str__ method so that the title of a book will display in the admin later on.
+- 12. Since we created a new database model we need to create a migration file to go along with it, then update our database.
+    - ```(library) $ python manage.py makemigrations books```
+    - ```(library) $ python manage.py migrate```
+- 13. Create a superuser account and update admin.py so the books app is displayed.
+    - ```(library) $ python manage.py createsuperuser```
+- 14. Register app in admin.py file (```admin.site.register(Book)```)
+- 15. Make our template 
+- 16. Configure our URLs
+
+
+- Django REST Framework is added just like any other third-party app. Make sure to quit the local server Control + c if it is still running. Then on the command line type the below.
+
+(library) $ pipenv install djangorestframework~=3.11.0
 
 
 
 
 
+## Cheat sheet notes
+- ```__init__.py``` is a Python way to treat a directory as a package; it is empty
+- ```asgi.py``` stands for Asynchronous Server Gateway Interface and is a new option in Django 3.0+
+- ```settings.py``` contains all the configuration for our project
+- ```urls.py``` controls the top-level URL routes
+- ```wsgi.py``` stands for Web Server Gateway Interface and helps Django serve the eventual web pages
+- ```manage.py``` executes various Django commands such as running the local web server or creating a new app.
+
+- ```admin.py``` is a configuration file for the built-in Django Admin app
+- ```apps.py``` is a configuration file for the app itself
+- ```the migrations/``` directory stores migrations files for database changes
+- ```models.py``` is where we define our database models
+- ```tests.py``` is for our app-specific tests
+- ```views.py``` is where we handle the request/response logic for our web app. Now update our book app’s admin.py file. 
 
 
-
-
-
-
+- Typically developers will also create an urls.py file within each app too for routing.
 
 
 
