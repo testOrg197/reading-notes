@@ -1269,11 +1269,22 @@ LOGOUT_REDIRECT_URL = 'home
 
 - Django REST Framework is added just like any other third-party app. Make sure to quit the local server Control + c if it is still running. Then on the command line type the below.
 
-(library) $ pipenv install djangorestframework~=3.11.0
+```(library) $ pipenv install djangorestframework~=3.11.0```
 
+- Add it to the INSTALLED_APPS config in our settings.py file ```'rest_framework',```
+- Create a new api app. ```(library) $ python manage.py startapp api```
 
+17. Adding an API endpoint is just like configuring a traditional Django app’s routes. First at the project-level we need to include the api app and configure its URL route, which will be api/
 
+18. Then create a urls.py file within the api app. ```(library) $ touch api/urls.py```
+19. To avoid confusion, some developers will call an API views file apiviews.py or api.py.
 
+20. A serializer translates data into a format that is easy to consume over the internet, typically JSON, and is displayed at an API endpoint. Make a serializers.py file within our api app.
+21. Import Django REST Framework’s serializers class and the Book model from our books app. We extend Django REST Framework’s ModelSerializer into a BookSerializer class that specifies our database model Book and the database fields we wish to expose: title, subtitle, author, and isbn.
+
+22. We want to see what our API endpoint looks like. We know it should return JSON at the URL http://127.0.0.1:8000/api/ (```python manage.py runserver```)
+
+23. Open a new, second command line console. We will use it to access the API running in the existing command line console. We can use the popular cURL program to execute HTTP requests via the command line. All we need for a basic GET request it to specify curl and the URL we want to call.
 
 ## Cheat sheet notes
 - ```__init__.py``` is a Python way to treat a directory as a package; it is empty
