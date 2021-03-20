@@ -1304,15 +1304,47 @@ LOGOUT_REDIRECT_URL = 'home
 
 - Typically developers will also create an urls.py file within each app too for routing.
 
+### *Class 32 Reading*
 
+#### Permissions
 
+- https://www.django-rest-framework.org/api-guide/permissions/
 
+- Authentication or identification by itself is not usually sufficient to gain access to information or code. For that, the entity requesting access must have authorization.
+- Permissions are used to grant or deny access for different classes of users to different parts of the API. 
+- Permissions determine whether a request should be granted or denied access.
+- ***Permission checks are always run at the very start of the view, before any other code is allowed to proceed.***
+    - Permission checks will typically use the authentication information in the request.user and request.auth properties to determine if the incoming request should be permitted. 
+- The simplest style of permission would be to allow access to any authenticated user, and deny access to any unauthenticated user. This corresponds to the ```IsAuthenticated``` class in REST framework.
+    - A slightly less strict style of permission would be to allow full access to authenticated users, but allow read-only access to unauthenticated users. This corresponds to the ```IsAuthenticatedOrReadOnly``` class in REST framework.
 
+- If any permission check fails an exceptions.PermissionDenied or exceptions.NotAuthenticated exception will be raised, and the main body of the view will not run.
 
+- Object level permissions are used to determine if a user should be allowed to act on a particular object, which will typically be a model instance.
 
+- This will either raise a ```PermissionDenied``` or ```NotAuthenticated``` exception, or simply return if the view has the appropriate permissions
 
+- The default permission policy may be set globally, using the ```DEFAULT_PERMISSION_CLASSES``` setting. 
+If not specified, this setting defaults to allowing unrestricted access:
 
+```'DEFAULT_PERMISSION_CLASSES': [```
+```   'rest_framework.permissions.AllowAny',```
+```]```
 
+- **AllowAny**: The AllowAny permission class will allow unrestricted access, regardless of if the request was authenticated or unauthenticated.
+- **IsAuthenticated**: The IsAuthenticated permission class will deny permission to any unauthenticated user, and allow permission otherwise.
+- **IsAdminUser**: The IsAdminUser permission class will deny permission to any user, unless user.is_staff is True in which case permission will be allowed.
+- **IsAuthenticatedOrReadOnly**: The IsAuthenticatedOrReadOnly will allow authenticated users to perform any request. Requests for unauthorised users will only be permitted if the request method is one of the "safe" methods; GET, HEAD or OPTIONS.
+- **DjangoModelPermissions**: This permission class ties into Django's standard django.contrib.auth model permissions. This permission must only be applied to views that have a .queryset property set. Authorization will only be granted if the user is authenticated and has the relevant model permissions assigned.
+
+**POST** requests require the user to have the add permission on the model.
+**PUT** and **PATCH** requests require the user to have the change permission on the model.
+**DELETE** requests require the user to have the delete permission on the model.
+The default behaviour can also be overridden to support custom model permissions. For example, you might want to include a view model permission for GET requests.
+
+- To use custom model permissions, override DjangoModelPermissions and set the .perms_map property. Refer to the source code for details.
+
+- **DjangoObjectPermissions**: This permission class ties into Django's standard object permissions framework that allows per-object permissions on models. In order to use this permission class, you'll also need to add a permission backend that supports object-level permissions, such as django-guardian.
 
 
 <!-- You can use the [editor on GitHub](https://github.com/testOrg762/reading-notes/edit/main/README.md) to maintain and preview the content for your website in Markdown files. -->
