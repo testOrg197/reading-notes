@@ -1346,6 +1346,79 @@ The default behaviour can also be overridden to support custom model permissions
 
 - **DjangoObjectPermissions**: This permission class ties into Django's standard object permissions framework that allows per-object permissions on models. In order to use this permission class, you'll also need to add a permission backend that supports object-level permissions, such as django-guardian.
 
+### *Class 33 Reading*
+
+#### JSON Web Tokens
+
+- <https://jwt.io/introduction/>
+
+- JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and self-contained way for securely transmitting information between parties as a JSON object.
+- JSON Web Tokens (JWT) can be verified and trusted because it is digitally signed
+- Can be signed using a secret or a public/private key pair using RSA or ECDSA.
+- Signed tokens can verify the integrity of the claims contained within it, while encrypted tokens hide those claims from other parties
+
+- *Authorization*: This is the most common scenario for using JWT. Once the user is logged in, each subsequent request will include the JWT, allowing the user to access routes, services, and resources that are permitted with that token. 
+    - Single Sign On is a feature that widely uses JWT nowadays, because of its small overhead and its ability to be easily used across different domains.
+- *Information Exchange*: JSON Web Tokens are a good way of securely transmitting information between parties. Because JWTs can be signed—for example, using public/private key pairs—you can be sure the senders are who they say they are. Additionally, as the signature is calculated using the header and the payload, you can also verify that the content hasn't been tampered with.
+
+- In its compact form, JSON Web Tokens consist of three parts separated by dots (.), which are: Header, Payload, Signature ```xxxxx.yyyyy.zzzzz```
+
+- **Header**: The header typically consists of two parts: the type of the token, which is JWT, and the signing algorithm being used, such as HMAC SHA256 or RSA.
+
+- **Payload**: The second part of the token is the payload, which contains the claims. Claims are statements about an entity (typically, the user) and additional data. There are three types of claims: registered, public, and private claims.
+
+- **Signature**: To create the signature part you have to take the encoded header, the encoded payload, a secret, the algorithm specified in the header, and sign that.
+- The output is three Base64-URL strings separated by dots that can be easily passed in HTML and HTTP environments, while being more compact when compared to XML-based standards such as SAML.
+
+
+- If you want to play with JWT and put these concepts into practice https://jwt.io/#debugger-io
+- Do not store sensitive session data in browser storage due to lack of security.
+
+- JSON Web Tokens (JWT) vs. Simple Web Tokens (SWT) vs. Security Assertion Markup Language Tokens (SAML).
+    - As JSON is less verbose than XML, when it is encoded its size is also smaller, making JWT more compact than SAML. This makes JWT a good choice to be passed in HTML and HTTP environments.
+    - JSON parsers are common in most programming languages because they map directly to objects. Conversely, XML doesn't have a natural document-to-object mapping. This makes it easier to work with JWT than SAML assertions.
+
+
+#### DRF JWT Authentication
+
+- https://simpleisbetterthancomplex.com/tutorial/2018/12/19/how-to-use-jwt-authentication-with-django-rest-framework.html
+
+
+- The JWT is acquired by exchanging an username + password for an access token and an refresh token
+    - The access token is usually short-lived (expires in 5 min or so, can be customized though).
+    - The refresh token lives a little bit longer (expires in 24 hours, also customizable). It is comparable to an authentication session. After it expires, you need a full login with username + password again.
+
+```header = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9```
+```payload = eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTQzODI4NDMxLCJqdGkiOiI3ZjU5OTdiNzE1MGQ0NjU3OWRjMmI0OTE2NzA5N2U3YiIsInVzZXJfaWQiOjF9```
+```signature = Ju70kdcaHKn1Qaz8H42zrOYk0Jx9kIckTn9Xx7vhikY```
+
+- ^^ This information is encoded using Base64. If we decode, we will see something like this:
+
+```header```
+
+```{```
+  ```"typ": "JWT",```
+  ```"alg": "HS256"```
+```}```
+```payload```
+
+```{```
+  ```"token_type": "access",```
+  ```"exp": 1543828431,```
+  ```"jti": "7f5997b7150d46579dc2b49167097e7b",```
+  ```"user_id": 1```
+```}```
+
+- For this tutorial we are going to use the ```djangorestframework_simplejwt``` library
+***pip install djangorestframework_simplejwt***
+
+- First step is to authenticate and obtain the token. The endpoint is /api/token/ and it only accepts POST requests
+```http post http://127.0.0.1:8000/api/token/ username=vitor password=123```
+
+- To get a new access token, you should use the refresh token endpoint /api/token/refresh/ posting the refresh token:
+```http post http://127.0.0.1:8000/api/token/refresh/ refresh=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTU0NTMwODIyMiwianRpIjoiNzAyOGFlNjc0ZTdjNDZlMDlmMzUwYjg3MjU1NGUxODQiLCJ1c2VyX2lkIjoxfQ.Md8AO3dDrQBvWYWeZsd_A1J39z6b6HEwWIUZ7ilOiPE```
+
+- At first glance the refresh token may look pointless, but in fact it is necessary to make sure the user still have the correct permissions. If your access token have a long expire time, it may take longer to update the information associated with the token. That’s because the authentication check is done by cryptographic means, instead of querying the database and verifying the data.
 
 <!-- You can use the [editor on GitHub](https://github.com/testOrg762/reading-notes/edit/main/README.md) to maintain and preview the content for your website in Markdown files. -->
 
