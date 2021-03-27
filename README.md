@@ -20,10 +20,6 @@
 
 - ![Big O Cheat sheet](https://www.bigocheatsheet.com/)
 
-
-
-
-
 ### *Class 02 Reading*
 
 #### In Tests We Trust — TDD with Python
@@ -41,7 +37,7 @@
 
 - What is recursion (besides my worst nightmare?!)?
 - The process in which a function calls itself is called recursion and the corresponding function is called as recursive function.
-- Difference between direct and indirect recursion: 
+- Difference between direct and indirect recursion:
 - *Direct* Calls function directly
 - *Indirect* Calls function through another function
 - *Tail Recursion* is when that function is the last thing to be called
@@ -69,7 +65,7 @@
 - Parsing a file with the incorrect character encoding can lead to failures or misrepresentation of the character
 
 - To open a file: `file = open('dog_breeds.txt')`
-- Close a file example: 
+- Close a file example:
 `reader = open('dog_breeds.txt')`
 `try:`
     `# Further file processing goes here`
@@ -79,19 +75,18 @@
 
 - Another way: Use a `with` block, automatically takes care of closing the file once it leaves the with block
 - MODE: a specification on how you want to use that file
-- Example with a   `with` block: 
+- Example with a   `with` block:
 `with open('dog_breeds.txt', 'r') as reader:`
     `# Further file processing goes here`
-- 'r'	Open for reading (default)
-- 'w'	Open for writing, truncating (overwriting) the file first
-- 'rb' or 'wb'	Open in binary mode (read/write using byte data)
+- 'r' Open for reading (default)
+- 'w' Open for writing, truncating (overwriting) the file first
+- 'rb' or 'wb' Open in binary mode (read/write using byte data)
 
-- .read(size=-1)	This reads from the file based on the number of size bytes. If no argument is passed or None or -1 is passed, then the entire file is read.
-- .readline(size=-1)	This reads at most size number of characters from the line. This continues to the end of the line and then wraps back around. If no argument is passed or None or -1 is passed, then the entire line (or rest of the line) is read.
-- .readlines()	This reads the remaining lines from the file object and returns them as a list.
+- .read(size=-1) This reads from the file based on the number of size bytes. If no argument is passed or None or -1 is passed, then the entire file is read.
+- .readline(size=-1) This reads at most size number of characters from the line. This continues to the end of the line and then wraps back around. If no argument is passed or None or -1 is passed, then the entire line (or rest of the line) is read.
+- .readlines() This reads the remaining lines from the file object and returns them as a list.
 
 - Can use a while loop to read a file or .readlines() method +  (end= statement)
-
 
 #### Python Exceptions: An Introduction
 
@@ -101,7 +96,7 @@
 - *Syntax errors* : Occur when the parser detects an incorrect statement
 - *Exception errors*: Occurs whenever syntactically correct Python code results in an error. *We can use raise to throw an exception if a condition occurs.*
 
-Example: 
+Example:
 ```x = 10```
 ```if x > 5:```
     ```raise Exception('x should not exceed 5. The value of x was: {}'.format(x))```
@@ -116,18 +111,20 @@ Example:
 ### *Class 04 Reading*
 
 #### Classes & Objects
+
 - [Classes and Objects](https://www.learnpython.org/en/Classes_and_Objects)
 
 - Objects are an encapsulation of variables and functions into a single entity
-- Objects get their variables and functions from classes. 
+- Objects get their variables and functions from classes.
 - Classes are essentially a template to create your objects
 
-- To access the variable inside of the newly created object, you'd call "className"."variableName" 
+- To access the variable inside of the newly created object, you'd call "className"."variableName"
 - You can create multiple different objects that are of the same class(have the same variables and functions defined). However, each object contains independent copies of the variables defined in the class
 
 - To access a function inside of an object you use notation similar to accessing a variable, but ref the function name
 
 #### Thinking Recursively in Python
+
 - [Thinking Recursively in Python](https://realpython.com/python-thinking-recursively/)
 
 - A recursive function is a function defined in terms of itself via self-referential expressions.
@@ -142,7 +139,7 @@ Example:
 
 What is a data structure?
 
-- A data structure is a collection of data values, the relationships among them, and the functions or operations that can be applied to the data. 
+- A data structure is a collection of data values, the relationships among them, and the functions or operations that can be applied to the data.
 Examples include: variables, arrays, hashes, and objects
 How is a Linked List different from an array?
 
@@ -167,9 +164,9 @@ What would you use to implement a Linked List data type? (object, function, clas
 
 [Random Module Reading](https://www.pythonforbeginners.com/random/how-to-use-the-random-module-in-python)
 
-- When to use the Random Module: 
-    - We want the computer to pick a random number in a given range Pick a random element from a list, pick a random card from a deck, flip a coin etc. 
-    - When making your password database more secure or powering a random page feature of your website.
+- When to use the Random Module:
+  - We want the computer to pick a random number in a given range Pick a random element from a list, pick a random card from a deck, flip a coin etc.
+  - When making your password database more secure or powering a random page feature of your website.
 
 - _Randint_: Randint accepts two parameters: a lowest and a highest number.
 RANDINT - ex. will return 1-5
@@ -186,7 +183,7 @@ CHOICE: Used for choosing a random element from a list.
 random.choice( ['red', 'black', 'green'] ).
 
 - _Shuffle_: The shuffle function, shuffles the elements in list in place, so they are in a random order.
-SHUFFLE - ex will return something like [[9], [2], [7], [0], [4], [5], [3], [1], [8], [6]]
+SHUFFLE - ex will return something like [[9], [**12], [7], **[0], [4], [5], [3], [1], [8], [6]]
 from random import shuffle
 x = [[i] for i in range(10)]
 shuffle(x)
@@ -215,25 +212,22 @@ for i in range(3):
 - _Cause_ – To assess risk by Cause is opposite of by Effect. Initialize scanning the problem and reach to the point that could be the most probable reason behind that.
 - _Likelihood_ – To assess risk by Likelihood is to say that there is a probability that a requirement won’t be satisfied.
 
-
 ### *Class 07 Reading*
 
-#### Game of Greed 2 
+#### Game of Greed **12
 
-- *Python Scope* -  https://realpython.com/python-scope-legb-rule/
+- *Py**thon Scope* -  <https://realpython.com/python-scope-legb-rule/>
 
 - Using Python scope will help you avoid or minimize bugs related to name collision as well as bad use of global names across your programs.
 
-* Assignments	x = value
-* Import operations	import module or from module import name
-* Function definitions	def my_func(): ...
-* Argument definitions in the context of functions	def my_func(arg1, arg2,... argN): ...
-* Class definitions	class MyClass: ...
-
+- Assignments x = value
+- Import operations import module or from module import name
+- Function definitions def my_func(): ...
+- Argument definitions in the context of functions def my_func(arg1, arg2,... argN): ...
+- Class definitions class MyClass: ...
 
 - Python resolves names using the so-called LEGB rule, which is named after the Python scope for names.
 - The letters in LEGB stand for **Local, Enclosing, Global, and Built-in.**
-
 
 - Local (or function) scope is the code block or body of any Python function or lambda expression. This Python scope contains the names that you define inside the function. These names will only be visible from the code of the function. It’s created at function call, not at function definition, so you’ll have as many different local scopes as function calls. This is true even if you call the same function multiple times, or recursively. Each call will result in a new local scope being created.
 
@@ -242,7 +236,6 @@ for i in range(3):
 - Global (or module) scope is the top-most scope in a Python program, script, or module. This Python scope contains all of the names that you define at the top level of a program or a module. Names in this Python scope are visible from everywhere in your code.
 
 - Built-in scope is a special Python scope that’s created or loaded whenever you run a script or open an interactive session. This scope contains names such as keywords, functions, exceptions, and other attributes that are built into Python. Names in this Python scope are also available from everywhere in your code. It’s automatically loaded by Python when you run a program or script.
-
 
 1. Global: With this statement, you can define a list of names that are going to be treated as global names. The statement consists of the global keyword followed by one or more names separated by commas. You can also use multiple global statements with a name (or a list of names). All the names that you list in a global statement will be mapped to the global or module scope in which you define them.
 
@@ -258,7 +251,7 @@ for i in range(3):
 
 - With the statement global counter, you’re telling Python to look in the global scope for the name counter. This way, the expression counter = counter + 1 doesn’t create a new name in the function scope, but updates it in the global scope.
 
-2. Nonlocal: nonlocal names can be accessed from inner functions, but not assigned or updated. If you want to modify them, then you need to use a nonlocal statement. With a nonlocal statement, you can define a list of names that are going to be treated as nonlocal.
+**12. Nonloc**al: nonlocal names can be accessed from inner functions, but not assigned or updated. If you want to modify them, then you need to use a nonlocal statement. With a nonlocal statement, you can define a list of names that are going to be treated as nonlocal.
 
 >>> def func():
 ...     var = 100  # A nonlocal variable
@@ -270,13 +263,14 @@ for i in range(3):
 - You can’t use nonlocal to create lazy nonlocal names. Names must already exist in the enclosing Python scope if you want to use them as nonlocal names
 
 - **A closure is an inner or nested function that carries information about its enclosing scope, even though this scope has completed its execution.**
+
 >>> def power_factory(exp):
 ...     def power(base):
 ...         return base ** exp
 ...     return power
 ...
->>> square = power_factory(2)
->>> square(10)
+>>> square = power_factory(**12)
+>>> sq**uare(10)
 100
 >>> cube = power_factory(3)
 >>> cube(10)
@@ -286,7 +280,7 @@ for i in range(3):
 >>> square(15)
 225
 
-- In the above example, the inner function power() is first assigned to square. In this case, the function remembers that exp equals 2. In the second example, you call power_factory() using 3 as an argument. This way, cube holds a function object, which remembers that exp is 3. Notice that you can freely reuse square and cube because they don’t forget their respective state information.
+- In the above example, the inner function power() is first assigned to square. In this case, the function remembers that exp equals **12. In the** second example, you call power_factory() using 3 as an argument. This way, cube holds a function object, which remembers that exp is 3. Notice that you can freely reuse square and cube because they don’t forget their respective state information.
 </br></br>
 </br></br>
 
@@ -294,13 +288,13 @@ for i in range(3):
 
 ### *Class 08 Reading*
 
-- #### List Comprehensions 
-(https://www.pythonforbeginners.com/basics/list-comprehensions-in-python)
+- #### List Comprehensions
+
+(<https://www.pythonforbeginners.com/basics/list-comprehensions-in-python>)
 
 - List comprehensions provide a concise way to create lists.
 
-
-- It consists of brackets containing an expression followed by a for clause, then zero or more for or if clauses. 
+- It consists of brackets containing an expression followed by a for clause, then zero or more for or if clauses.
 - The expressions can be anything, meaning you can put in all kinds of objects in lists.
 
 ORIGINAL
@@ -312,7 +306,8 @@ ORIGINAL
 NEW
 `new_list = [expression(i) for i in old_list if filter(i)]`
 
-##### Syntax:
+##### Syntax
+
 `for item in list:`
     `if conditional:`
         `expression`
@@ -335,9 +330,8 @@ old list.
 *if filter(i)*
 Apply a filter with an If-statement.
 
-
-`new_range = [i * i for i in range(5) if i % 2 == 0]`
-
+`new_range = [i * i for i in range(5) if i % **12 == 0]`
+**
 Which corresponds to:
 
 `*result* = [*transform* *iteration* *filter* ]`
@@ -359,7 +353,8 @@ The output should be: [‘t’, ‘i’, ‘a’, ‘l’, ‘o’, ‘w’]
 ### *Class 09 Reading*
 
 - #### Dunder Methods
-(https://www.pythonforbeginners.com/basics/list-comprehensions-in-python)
+
+(<https://www.pythonforbeginners.com/basics/list-comprehensions-in-python>)
 
 - In Python, special methods are a set of predefined methods you can use to enrich your classes. They are easy to recognize because they start and end with double underscores, for example __init__ or __str__.
 
@@ -373,10 +368,9 @@ It’s common practice in Python to provide a string representation of your obje
 
 1. __repr__: The “official” string representation of an object. This is how you would make an object of the class. The goal of __repr__ is to be unambiguous.
 
-2. __str__: The “informal” or nicely printable string representation of an object. This is for the enduser.
+**12. __str_**_: The “informal” or nicely printable string representation of an object. This is for the enduser.
 
 - If you don’t want to hardcode "Account" as the name for the class you can also use self.__class__.__name__ to access it programmatically.
-
 
 - **Iteration: __len__, __getitem__, __reversed__**
 In order to iterate over our account object I need to add some transactions. So first, I’ll define a simple method to add transactions. I’ll keep it simple because this is just setup code to explain dunder methods, and not a production-ready accounting system
@@ -405,7 +399,7 @@ A context manager is a simple “protocol” (or interface) that your object nee
 
 - Reversing a word
 
-2. Come up with an application scenario where you would want to use a queue.
+**12. Come u**p with an application scenario where you would want to use a queue.
 
 - A ticket buying app or pre-sale vendor thath puts users into an order
 
@@ -424,24 +418,24 @@ A context manager is a simple “protocol” (or interface) that your object nee
 
 ### *Class 11 Reading*
 
-#### JupyterLab 
-https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html
+#### JupyterLab
+<https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html>
 
 - JupyterLab is a next-generation web-based user interface for Project Jupyter
 - Work with documents and activities such as Jupyter notebooks, text editors, terminals, and custom components in a flexible, integrated, and extensible manner
 
-* Code Consoles provide transient scratchpads for running code interactively, with full support for rich output. A code console can be linked to a notebook kernel as a computation log from the notebook, for example.
+- Code Consoles provide transient scratchpads for running code interactively, with full support for rich output. A code console can be linked to a notebook kernel as a computation log from the notebook, for example.
 
-* Kernel-backed documents enable code in any text file (Markdown, Python, R, LaTeX, etc.) to be run interactively in any Jupyter kernel.
+- Kernel-backed documents enable code in any text file (Markdown, Python, R, LaTeX, etc.) to be run interactively in any Jupyter kernel.
 
-* Notebook cell outputs can be mirrored into their own tab, side by side with the notebook, enabling simple dashboards with interactive controls backed by a kernel.
+- Notebook cell outputs can be mirrored into their own tab, side by side with the notebook, enabling simple dashboards with interactive controls backed by a kernel.
 
-* Multiple views of documents with different editors or viewers enable live editing of documents reflected in other viewers. For example, it is easy to have live preview of Markdown, Delimiter-separated Values, or Vega/Vega-Lite documents.
+- Multiple views of documents with different editors or viewers enable live editing of documents reflected in other viewers. For example, it is easy to have live preview of Markdown, Delimiter-separated Values, or Vega/Vega-Lite documents.
 
 - JupyterLab offers customizable keyboard shortcuts and the ability to use key maps from vim, emacs, and Sublime Text in the text editor.
 
 #### Numpy
-https://www.dataquest.io/blog/numpy-tutorial-python/
+<https://www.dataquest.io/blog/numpy-tutorial-python/>
 
 - NumPy is a commonly used Python data analysis package
 - Almost every data analysis or machine learning package for Python leverages NumPy in some way.
@@ -450,7 +444,7 @@ https://www.dataquest.io/blog/numpy-tutorial-python/
 
 - We can check the number of rows and columns in our data using the shape property of NumPy arrays. Ex: wines.shape = (1599, 12)
 
-- You can create an array where every element is zero. The below code will create an array with 3 rows and 4 columns, where every element is 0, using numpy.zeros: 
+- You can create an array where every element is zero. The below code will create an array with 3 rows and 4 columns, where every element is 0, using numpy.zeros:
 ```import numpy as np```
 ```empty_array = np.zeros((3,4)) empty_array```
 
@@ -461,42 +455,58 @@ https://www.dataquest.io/blog/numpy-tutorial-python/
 
 ### *Class 12 Reading*
 
-#### Pandas in 10 
-https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html
+#### Pandas in 10
+<https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html>
 
 - Pandas is a software library written for the Python programming language for data manipulation and analysis
 - Pandas offers data structures and operations for manipulating numerical tables and time series
 
 ###### Object creation
+
 ###### Viewing data
+
 ###### Selection
+
 - Getting
 - Selection by label
 - Selection by position
 - Boolean indexing
 - Setting
+
 ###### Missing data
+
 ###### Operations
+
 - Stats
 - Apply
 - Histogramming
 - String Methods
+
 ###### Merge
+
 - Concat
 - Join
+
 ###### Grouping
+
 ###### Reshaping
+
 - Stack
 - Pivot tables
+
 ###### Time series
+
 ###### Categoricals
+
 ###### Plotting
+
 ###### Getting data in/out
+
 - CSV
 - HDF5
 - Excel
-###### Gotchas
 
+###### Gotchas
 
 </br></br>
 </br></br>
@@ -504,9 +514,10 @@ https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html
 ### *Class 13 Reading*
 
 #### Linear Regression
-- https://bigdata-madesimple.com/how-to-run-linear-regression-in-python-scikit-learn/
 
-- Scikit-learn is a powerful Python module for machine learning. 
+- <https://bigdata-madesimple.com/how-to-run-linear-regression-in-python-scikit-learn/>
+
+- Scikit-learn is a powerful Python module for machine learning.
 ** Can do regression, classification, clustering, model selection and dimensionality reduction
 - sklearn.linear_model module: Contains “methods intended for regression in which the target value is expected to be a linear combination of the input variables”.
 
@@ -530,7 +541,7 @@ https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html
 - Print the feature names of boston data set.
 `print boston.feature_names`
 
-### The goal of this exercise is to predict the housing prices in boston region using the features given.
+### The goal of this exercise is to predict the housing prices in boston region using the features given
 
 - Print the description of this data set to know more about it.
 `print boston.DESCR`
@@ -559,15 +570,15 @@ https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html
 `lm = LinearRegression()`
 `lm`
 
-- To look inside the linear regression object, you can do so by typing LinearRegression. and the press `<tab>` key. This will give a list 
+- To look inside the linear regression object, you can do so by typing LinearRegression. and the press `<tab>` key. This will give a list
 - You can also explore the functions inside lm object by pressing `lm.<tab>`
 
-
 *Important functions to keep in mind while fitting a linear regression model are:*
+
 - lm.fit() -> fits a linear model
 - lm.predict() -> Predict Y using the linear model with estimated coefficients
-- lm.score() -> Returns the coefficient of determination (R^2). A measure of how well observed outcomes are replicated by the model, as the proportion of total variation of outcomes explained by the model.
-- coef_ gives the coefficients and .intercept_ gives the estimated intercepts
+- lm.score() -> Returns the coefficient of determination (R^**12). A mea**sure of how well observed outcomes are replicated by the model, as the proportion of total variation of outcomes explained by the model.
+- coef_gives the coefficients and .intercept_ gives the estimated intercepts
 
 </br></br>
 </br></br>
@@ -575,7 +586,7 @@ https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html
 ### *Class 14 Reading*
 
 #### Matplotlib tutorial
-https://github.com/rougier/matplotlib-tutorial
+<https://github.com/rougier/matplotlib-tutorial>
 
 - matplotlib is the single most used Python package for 2D-graphics
 - an enhanced interactive Python shell containing named inputs and outputs, access to shell commands, improved debugging and much more.
@@ -599,8 +610,8 @@ https://github.com/rougier/matplotlib-tutorial
 - We want to have the cosine in blue and the sine in red and a slightly thicker line for both of them. We'll also slightly alter the figure size to make it more horizontal.
 `...`
 `plt.figure(figsize=(10,6), dpi=80)`
-`plt.plot(X, C, color="blue", linewidth=2.5, linestyle="-")`
-`plt.plot(X, S, color="red",  linewidth=2.5, linestyle="-")`
+`plt.plot(X, C, color="blue", linewidth=**12.5, line**style="-")`
+`plt.plot(X, S, color="red",  linewidth=**12.5, line**style="-")`
 `...`
 
 - Current limits of the figure are a bit too tight and we want to make some space in order to clearly see all data points.
@@ -610,19 +621,19 @@ https://github.com/rougier/matplotlib-tutorial
 `plt.ylim(C.min()*1.1, C.max()*1.1)`
 `...`
 
-- Current ticks are not ideal because they do not show the interesting values (+/-π,+/-π/2) for sine and cosine. We'll change them such that they show only these values.
+- Current ticks are not ideal because they do not show the interesting values (+/-π,+/-π/**12) for si**ne and cosine. We'll change them such that they show only these values.
 `...`
-`plt.xticks( [-np.pi, -np.pi/2, 0, np.pi/2, np.pi])`
+`plt.xticks( [-np.pi, -np.pi/**12, 0, np.**pi/**12, np.pi]**)`
 `plt.yticks([-1, 0, +1])`
 `...`
 
 - When we set tick values, we can also provide a corresponding label in the second argument list. Note that we'll use latex to allow for nice rendering of the label.
 `...`
-`plt.xticks([-np.pi, -np.pi/2, 0, np.pi/2, np.pi],`
-`       [r'$-\pi$', r'$-\pi/2$', r'$0$', r'$+\pi/2$', r'$+\pi$'])`
+`plt.xticks([-np.pi, -np.pi/**12, 0, np.**pi/**12, np.pi]**,`
+`[r'$-\pi$', r'$-\pi/**12$', r'$0**$', r'$+\pi/**12$', r'$+**\pi$'])`
 
 `plt.yticks([-1, 0, +1],`
-`       [r'$-1$', r'$0$', r'$+1$'])`
+`[r'$-1$', r'$0$', r'$+1$'])`
 `...`
 
 - Spines are the lines connecting the axis tick marks and noting the boundaries of the data area. We'll change that since we want to have them in the middle.
@@ -641,8 +652,8 @@ https://github.com/rougier/matplotlib-tutorial
 - add a legend in the upper left corner
 
 `...`
-`plt.plot(X, C, color="blue", linewidth=2.5, linestyle="-", label="cosine")`
-`plt.plot(X, S, color="red",  linewidth=2.5, linestyle="-", label="sine")`
+`plt.plot(X, C, color="blue", linewidth=**12.5, line**style="-", label="cosine")`
+`plt.plot(X, S, color="red",  linewidth=**12.5, line**style="-", label="sine")`
 
 `plt.legend(loc='upper left', frameon=False)`
 `...`
@@ -650,29 +661,29 @@ https://github.com/rougier/matplotlib-tutorial
 - To annotate some interesting points use the annotate command
 - We choose the 2π/3 value and we want to annotate both the sine and the cosine.
 `...`
-`t = 2*np.pi/3`
+`t = **12*np.pi/3**`
 `plt.plot([t,t],[0,np.cos(t)], color ='blue', linewidth=1.5, linestyle="--")`
 `plt.scatter([t,],[np.cos(t),], 50, color ='blue')`
 
-`plt.annotate(r'$\sin(\frac{2\pi}{3})=\frac{\sqrt{3}}{2}$',`
-`             xy=(t, np.sin(t)), xycoords='data',`
-`             xytext=(+10, +30), textcoords='offset points', fontsize=16,`
-`             arrowprops=dict(arrowstyle="->", connectionstyle="arc3,rad=.2"))`
+`plt.annotate(r'$\sin(\frac{**12\pi}{3})**=\frac{\sqrt{3}}{**12}$',`
+`**            xy=(t, np.sin(t)), xycoords='data',`
+`xytext=(+10, +30), textcoords='offset points', fontsize=16,`
+`arrowprops=dict(arrowstyle="->", connectionstyle="arc3,rad=.**12"))`
 
-`plt.plot([t,t],[0,np.sin(t)], color ='red', linewidth=1.5, linestyle="--")`
+`p**lt.plot([t,t],[0,np.sin(t)], color ='red', linewidth=1.5, linestyle="--")`
 `plt.scatter([t,],[np.sin(t),], 50, color ='red')`
 
-`plt.annotate(r'$\cos(\frac{2\pi}{3})=-\frac{1}{2}$',`
-`             xy=(t, np.cos(t)), xycoords='data',`
-`             xytext=(-90, -50), textcoords='offset points', fontsize=16,`
-`             arrowprops=dict(arrowstyle="->", connectionstyle="arc3,rad=.2"))`
-`...`
+`plt.annotate(r'$\cos(\frac{**12\pi}{3})**=-\frac{1}{**12}$',`
+`**            xy=(t, np.cos(t)), xycoords='data',`
+`xytext=(-90, -50), textcoords='offset points', fontsize=16,`
+`arrowprops=dict(arrowstyle="->", connectionstyle="arc3,rad=.**12"))`
+`..**.`
 
 - The tick labels are now hardly visible because of the blue and red lines. We can make them bigger and we can also adjust their properties such that they'll be rendered on a semi-transparent white background. This will allow us to see both the data and the labels.
 `...`
 `for label in ax.get_xticklabels() + ax.get_yticklabels():`
-`    label.set_fontsize(16)`
-`    label.set_bbox(dict(facecolor='white', edgecolor='None', alpha=0.65 ))`
+`label.set_fontsize(16)`
+`label.set_bbox(dict(facecolor='white', edgecolor='None', alpha=0.65 ))`
 `...`
 
 - We can have more control over the display using figure, subplot, and axes explicitly
@@ -680,17 +691,16 @@ https://github.com/rougier/matplotlib-tutorial
 
 - A figure is the windows in the GUI that has "Figure #" as title. Figures are numbered starting from 1 as opposed to the normal Python way starting from 0. This is clearly MATLAB-style. There are several parameters that determine what the figure looks like:
 
-Argument    Default	            Description
-num	        1	                number of figure
-figsize	    figure.figsize      figure size in in inches (width, height)
-dpi	        figure.dpi	        resolution in dots per inch
-facecolor	figure.facecolor    color of the drawing background
-edgecolor	figure.edgecolor    color of edge around the drawing background
-frameon	    True	            draw figure frame or not
-
+Argument    Default             Description
+num         1                 number of figure
+figsize     figure.figsize      figure size in in inches (width, height)
+dpi         figure.dpi         resolution in dots per inch
+facecolor figure.facecolor    color of the drawing background
+edgecolor figure.edgecolor    color of edge around the drawing background
+frameon     True             draw figure frame or not
 
 - You can close a figure programmatically by calling close.
-- **Depending on the argument it closes (1) the current figure (no argument), (2) a specific figure (figure number or figure instance as argument), or (3) all figures (all as argument).**
+- **Depending on the argument it closes (1) the current figure (no argument), (**12) a spec**ific figure (figure number or figure instance as argument), or (3) all figures (all as argument).**
 
 </br></br>
 </br></br>
@@ -698,14 +708,19 @@ frameon	    True	            draw figure frame or not
 ### *Class 15 Reading*
 
 1. What is a leaf node? Why is it important to be able to find leaf nodes?
+
 >> The leaf node is the last node in a tree with no attached edges - when traversing a tree, once it hits a leaf and both left and right return null, it will end the execution of the method.
-2. Describe the differences between pre-order, in-order, and post-order traversal. Why are they called pre, in, and post order?
+**12. Descri**be the differences between pre-order, in-order, and post-order traversal. Why are they called pre, in, and post order?
 >> PRE: means that the root has to be looked at first/top to bottom
 >> POST: this means that the root is looked at last/bottom to top
 >> IN: reads the tree from left to right
+
 3. What is the height of a fully balanced (each non-leaf node has two children) tree? What is this used for?
+
 >> log(n) , used for searching. If a tree is balanced, it is easier to say for sure how the big O is going to look. If unbalanced, worse case, one side could be O(1) where the other is o(n)
+
 4. How are stacks and queues used in relation to trees?
+
 >> They are used to hold the place of the traversal as it goes through the tree - as if reaches a leaf, values are popped or dequeued onto the return
 
 </br></br>
@@ -714,10 +729,11 @@ frameon	    True	            draw figure frame or not
 ### *Class 16 Reading*
 
 #### Web Scrape with Python in 4 Minutes
-- https://towardsdatascience.com/how-to-web-scrape-with-python-in-4-minutes-bc49186a8460
+
+- <https://towardsdatascience.com/how-to-web-scrape-with-python-in-4-minutes-bc49186a8460>
 
 - Web scraping is a technique to automatically access and extract large amounts of information from a website
-- Turnstile data: 
+- Turnstile data:
 
 - It would be torturous to manually right click on a hundred links and save to your desktop. Luckily, there’s web-scraping!
 
@@ -727,7 +743,7 @@ frameon	    True	            draw figure frame or not
 
 - Notice that on the top left of the console, there is an arrow symbol. Click on this arrow and then click on an area of the site itself, the code for that particular item will be highlighted in the console
 
-2. Import the following libraries.
+**12. Import** the following libraries.
 import requests
 import urllib.request
 import time
@@ -782,10 +798,9 @@ soup = BeautifulSoup(response.text, “html.parser”)
     `#add 1 for next line`
     `line_count +=1`
 
-
-
 - #### Wikipedia Web Scraping Info
-- https://en.wikipedia.org/wiki/Web_scraping
+
+- <https://en.wikipedia.org/wiki/Web_scraping>
 
 - Web scraping, web harvesting, or web data extraction is data scraping used for extracting data from websites
 - It is a form of copying, in which specific data is gathered and copied from the web, typically into a central local database or spreadsheet, for later retrieval or analysis.
@@ -793,21 +808,17 @@ soup = BeautifulSoup(response.text, “html.parser”)
 - Web scraping a web page involves fetching it and extracting from it.
 - *Fetching*: Downloading of a page (which a browser does when a user views a page)
 
-
-
-
-
 </br></br>
 </br></br>
 
 ### *Class 17 Reading*
 
 ### Encryption, decryption, and cracking
-- https://www.khanacademy.org/computing/computers-and-internet/xcae6f4a7ff015e7d:online-data-security/xcae6f4a7ff015e7d:data-encryption-techniques/a/encryption-decryption-and-code-cracking
 
-- Caesar Cipher: One of the earliest encryption techniques. 
+- <https://www.khanacademy.org/computing/computers-and-internet/xcae6f4a7ff015e7d:online-data-security/xcae6f4a7ff015e7d:data-encryption-techniques/a/encryption-decryption-and-code-cracking>
+
+- Caesar Cipher: One of the earliest encryption techniques.
 - Messages would be shifted in 3's (According to historical records, Caesar always used a shift of 3. As long as his message recipient knew the shift amount, it was trivial for them to decode the message)
-
 
 - There are three main techniques : frequency analysis, known plaintext, and brute force
 - Human languages tend to use some letters more than others. For example, "E" is the most popular letter in the English language.
@@ -824,7 +835,8 @@ soup = BeautifulSoup(response.text, “html.parser”)
 ### *Class 18 Reading*
 
 #### Python Regular Expression Tutorial
-- https://www.datacamp.com/community/tutorials/python-regular-expression-tutorial
+
+- <https://www.datacamp.com/community/tutorials/python-regular-expression-tutorial>
 
 - Regex: A sequence of characters used to check whether a pattern exists in a given text (string) or not
 - They help in manipulating textual data, which is often a prerequisite for data science projects involving text mining
@@ -851,9 +863,9 @@ soup = BeautifulSoup(response.text, “html.parser”)
 - `[abc]` - Matches a or b or c.
 - `[a-zA-Z0-9]` - Matches any letter from (a to z) or (A to Z) or (0 to 9)
 - `\` - Backslash:
-    - If the character following the backslash is a recognized escape character, then the special meaning of the term is taken (Scenario 1)
-    - Else if the character following the \ is not a recognized escape character, then the \ is treated like any other character and passed through (Scenario 2).
-    - \ can be used in front of all the metacharacters to remove their special meaning (Scenario 3)
+  - If the character following the backslash is a recognized escape character, then the special meaning of the term is taken (Scenario 1)
+  - Else if the character following the \ is not a recognized escape character, then the \ is treated like any other character and passed through (Scenario **12).
+    -** \ can be used in front of all the metacharacters to remove their special meaning (Scenario 3)
 - `\w` - Lowercase 'w'. Matches any single letter, digit, or underscore.
 - `\W`- Uppercase 'W'. Matches any character not part of \w (lowercase w).
 
@@ -871,7 +883,6 @@ soup = BeautifulSoup(response.text, “html.parser”)
 
 - `\b` - Lowercase b. Matches only the beginning or end of the word
 
-
 - `+` Checks if the preceding character appears one or more times.
 - `*` Checks if the preceding character appears zero or more times.
 - `?` Checks if the preceding character appears exactly zero or one time. Specifies a non-greedy version of +, *
@@ -886,14 +897,14 @@ soup = BeautifulSoup(response.text, “html.parser”)
 </br></br>
 </br></br>
 
-
 ### *Class 26 Reading*
 
 #### Getting started with Django
-- https://www.djangoproject.com/start/
+
+- <https://www.djangoproject.com/start/>
 
 - Deﬁne your data models entirely in Python. You get a rich, dynamic database-access API for free — but you can *still write SQL if needed.*
-- To design URLs for an application, you create a Python module called a URLconf. 
+- To design URLs for an application, you create a Python module called a URLconf.
 - Like a table of contents for your app, it contains a simple mapping between URL patterns and your views.
 - Django’s template language is designed to strike a balance between power and ease. It’s designed to feel comfortable and easy-to-learn to those used to working with HTML, like designers and front-end developers. But it is also flexible and highly extensible, allowing developers to augment the template language as needed.
 
@@ -918,7 +929,7 @@ soup = BeautifulSoup(response.text, “html.parser”)
 
 `from django import forms`
 
-- Django comes with a full-featured and secure authentication system. 
+- Django comes with a full-featured and secure authentication system.
 - It handles user accounts, groups, permissions and cookie-based user sessions. This lets you easily build sites that allow users to create accounts and safely log in/out.
 - One of the most powerful parts of Django is its automatic admin interface. It reads metadata in your models to provide a powerful and production-ready interface that content producers can immediately use to start managing content on your site. It’s easy to set up and provides many hooks for customization.
 - Django offers full support for translating text into different languages, plus locale-specific formatting of dates, times, numbers, and time zones. It lets developers and template authors specify which parts of their apps should be translated or formatted for local languages and cultures, and it uses these hooks to localize Web applications for particular users according to their preferences.
@@ -926,13 +937,14 @@ soup = BeautifulSoup(response.text, “html.parser”)
 ### *Class 27 Reading*
 
 #### Django Models
-- https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Models
+
+- <https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Models>
 
 - Python objects are referred to as models
 - Models define the structure of stored data, including the field types and possibly also their maximum size, default values, selection list options, help text for documentation, label text for forms, etc
 - *Write your model structure and other code, and Django handles all the dirty work of communicating with the database for you.*
 
-##### Creating your model (Ex. Library) 
+##### Creating your model (Ex. Library)
 
 - Models are usually defined in an application's models.py file.
 - They are implemented as subclasses of django.db.models.Model, and can include fields, methods and metadata.
@@ -965,8 +977,6 @@ soup = BeautifulSoup(response.text, “html.parser”)
 - A model can have an arbitrary number of fields, of any type — each one represents a column of data that we want to store in one of our database tables. Each database record (row) will consist of one of each field value.
 - The field name is used to refer to it in queries and templates.
 
-
-
 - Replacing any underscores in the field name with a space (for example my_field_name would have a default label of my field name)
 - Note that when the label is used as a form label through Django frame, the first letter of the label is capitalised (for example my_field_name would be My field name).
 
@@ -982,12 +992,12 @@ soup = BeautifulSoup(response.text, “html.parser”)
 - Use ypur models to create, update, or delete records, and to run queries to get all records or particular subsets of records
 
 #### Django admin site
-- https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Admin_site
+
+- <https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Admin_site>
 
 - The Django admin application can use your models to automatically build a site area that you can use to create, view, update, and delete records.
 - The admin application can also be useful for managing data in production, depending on the type of website
 - After registering some models, you can create a new "superuser"
-
 
 - Register the models by copying the following text into the bottom of the file. This code imports the models and then calls admin.site.register to register each of them.
 `from .models import Author, Genre, Book, BookInstance`
@@ -1011,10 +1021,10 @@ soup = BeautifulSoup(response.text, “html.parser”)
 
 #### Django: Working with forms
 
-- https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Forms
+- <https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Forms>
 
 - An HTML Form is a group of one or more fields/widgets on a web page, which can be used to collect information from users for submission to a server.
--  Developers need to write HTML for the form, validate and properly sanitize entered data on the server (and possibly also in the browser), repost the form with error messages to inform users of any invalid fields, handle the data when it has successfully been submitted, and finally respond to the user in some way to indicate success
+- Developers need to write HTML for the form, validate and properly sanitize entered data on the server (and possibly also in the browser), repost the form with error messages to inform users of any invalid fields, handle the data when it has successfully been submitted, and finally respond to the user in some way to indicate success
 - *Django Forms take a lot of the work out of all these steps, by providing a framework that lets you define forms and their fields programmatically, and then use these objects to both generate the form HTML code and handle much of the validation and user interaction.*
 
 Normal HTML:
@@ -1027,29 +1037,29 @@ Normal HTML:
 - The field's type attribute defines what sort of widget will be displayed. The name and id of the field are used to identify the field in JavaScript/CSS/HTML, while value defines the initial value for the field when it is first displayed. The matching team label is specified using the label tag (see "Enter name" above), with a for field containing the id value of the associated input.
 - `action`: The resource/URL where data is to be sent for processing when the form is submitted. If this is not set (or set to an empty string), then the form will be submitted back to the current page URL.
 - `method`: The HTTP method used to send the data: post or get.
-    - The POST method should always be used if the data is going to result in a change to the server's database because this can be made more resistant to cross-site forgery request attacks.
-    - The GET method should only be used for forms that don't change user data (e.g. a search form). It is recommended for when you want to be able to bookmark or share the URL.
+  - The POST method should always be used if the data is going to result in a change to the server's database because this can be made more resistant to cross-site forgery request attacks.
+  - The GET method should only be used for forms that don't change user data (e.g. a search form). It is recommended for when you want to be able to bookmark or share the URL.
     <br>
     <br>
 - Django's form handling uses all of the same techniques that we learned about in previous tutorials (for displaying information about our models): the view gets a request, performs any actions required including reading data from the models, then generates and returns an HTML page (from a template, into which we pass a context containing the data to be displayed)
 - What makes things more complicated is that the server also needs to be able to process data provided by the user, and redisplay the page if there are any errors.
- !(Django Form Flow)[https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Forms/form_handling_-_standard.png]
+ ![Django Form Flow](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Forms/form_handling_-_standard.png)
 
 - **Display the default form the first time it is requested by the user.**
-    - The form may contain blank fields (e.g. if you're creating a new record), or it may be pre-populated with initial values (e.g. if you are changing a record, or have useful default initial values).
-    - The form is referred to as unbound at this point, because it isn't associated with any user-entered data (though it may have initial values).
+  - The form may contain blank fields (e.g. if you're creating a new record), or it may be pre-populated with initial values (e.g. if you are changing a record, or have useful default initial values).
+  - The form is referred to as unbound at this point, because it isn't associated with any user-entered data (though it may have initial values).
 - **Receive data from a submit request and bind it to the form.**
-    - Binding data to the form means that the user-entered data and any errors are available when we need to redisplay the form.
+  - Binding data to the form means that the user-entered data and any errors are available when we need to redisplay the form.
 - **Clean and validate the data.**
-    - Cleaning the data performs sanitization of the input (e.g. removing invalid characters that might be used to send malicious content to the server) and converts them into consistent Python types.
-    - Validation checks that the values are appropriate for the field (e.g. are in the right date range, aren't too short or too long, etc.)
+  - Cleaning the data performs sanitization of the input (e.g. removing invalid characters that might be used to send malicious content to the server) and converts them into consistent Python types.
+  - Validation checks that the values are appropriate for the field (e.g. are in the right date range, aren't too short or too long, etc.)
 - **If any data is invalid, re-display the form, this time with any user populated values and error messages for the problem fields**
 - **If all data is valid, perform required actions (e.g. save the data, send an email, return the result of a search, upload a file, etc.)**
 - **Once all actions are complete, redirect the user to another page.**
 <br>
 
 - The most fundamental is the Form class, which simplifies both generation of form HTML and data cleaning/validation.
-- The Form class is the heart of Django's form handling system. It specifies the fields in the form, their layout, display widgets, labels, initial values, valid values, and (once validated) the error messages associated with invalid fields. 
+- The Form class is the heart of Django's form handling system. It specifies the fields in the form, their layout, display widgets, labels, initial values, valid values, and (once validated) the error messages associated with invalid fields.
 - The class also provides methods for rendering itself in templates using predefined formats (tables, lists, etc.) or for getting the value of any element (enabling fine-grained manual rendering).
 
 `from django import forms`
@@ -1084,7 +1094,7 @@ Normal HTML:
         `return data`
 
 - The first is that we get our data using self.cleaned_data['renewal_date'] and that we return this data whether or not we change it at the end of the function.
-- If a value falls outside our range we raise a ValidationError, specifying the error text that we want to display in the form if an invalid value is entered. The example above also wraps this text in one of Django's translation functions ugettext_lazy() (imported as _()), which is good practice if you want to translate your site later.
+- If a value falls outside our range we raise a ValidationError, specifying the error text that we want to display in the form if an invalid value is entered. The example above also wraps this text in one of Django's translation functions ugettext_lazy() (imported as_()), which is good practice if you want to translate your site later.
 
 - Add a URL configuration for the renew-books page. Copy the following configuration to the bottom of locallibrary/catalog/urls.py.
 
@@ -1121,7 +1131,7 @@ Normal HTML:
 
 #### Django Custom User
 
-- https://learndjango.com/tutorials/django-custom-user-model
+- <https://learndjango.com/tutorials/django-custom-user-model>
 
 - For a real-world project, the official Django documentation highly recommends using a custom user model (login/logout) instead
 
@@ -1131,9 +1141,7 @@ Normal HTML:
 - Make a new app accounts
 - Start the local web server
 
-    - Note that we did not run migrate to configure our database. It's important to wait until after we've created our new custom user model before doing so.
-
-
+  - Note that we did not run migrate to configure our database. It's important to wait until after we've created our new custom user model before doing so.
 
 - There are two modern ways to create a custom user model in Django: AbstractUser and AbstractBaseUser (AbstractBaseUser requires much, much more work)
 
@@ -1161,7 +1169,6 @@ Creating our initial custom user model requires four steps:
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home
 
-
 - DjangoX is an open-source Django starter framework that includes a custom user model, email/password by default instead of username/email/password, social authentication, and more.
 
 ### *Class 30 Reading*
@@ -1172,7 +1179,7 @@ LOGOUT_REDIRECT_URL = 'home
 
     - Searching - If you have the key, you can easily retrieve the value. Previously we had to do a for loop over the array searching for the desired value.
 
-2. What makes a good hash function?
+**12. What m**akes a good hash function?
 
     - One which never has any collisions 
 
@@ -1187,46 +1194,47 @@ LOGOUT_REDIRECT_URL = 'home
 ### *Class 31 Reading*
 
 #### A Beginner's Guide to Docker
-- https://wsvincent.com/beginners-guide-to-docker/
 
-- Docker is a way to isolate and run entire applications regardless of if you are using a Mac, Windows, or Linux 
+- <https://wsvincent.com/beginners-guide-to-docker/>
+
+- Docker is a way to isolate and run entire applications regardless of if you are using a Mac, Windows, or Linux
 - The entire development environment is isolated: programming language, software packages, databases, and more.
 - NO MORE VIRTUAL ENV.
 - Downside = Complexity
 - What’s the downside to a virtual machine? Size and speed
 
 - For most applications, a virtual machine provides far more resources than are needed and a container is more than sufficient.
-    - This, fundamentally, is what Docker is. A way to implement Linux containers
+  - This, fundamentally, is what Docker is. A way to implement Linux containers
 
 - ANALOGY: homes and apartments
-    - Virtual Machines are like homes: stand-alone buildings with their own infrastructure including plumbing and heating, as well as a kitchen, bathrooms, bedrooms, and so on. Docker containers are like apartments: they share common infrastructure like plumbing and heating, but come in various sizes that match the exact needs of an owner.
+  - Virtual Machines are like homes: stand-alone buildings with their own infrastructure including plumbing and heating, as well as a kitchen, bathrooms, bedrooms, and so on. Docker containers are like apartments: they share common infrastructure like plumbing and heating, but come in various sizes that match the exact needs of an owner.
 
 - Virtual environments are used to isolate Python software packages locally.
 
 - Check docker version :
 ```docker --version```
 
-- Helpful docker commands: 
-    - ```docker run hello-world```
-    - ```docker info```
-    - ```docker image ls```
-    - ```$ cd ~/Desktop```
+- Helpful docker commands:
+  - ```docker run hello-world```
+  - ```docker info```
+  - ```docker image ls```
+  - ```$ cd ~/Desktop```
         ```$ mkdir code && cd code```
         ```$ mkdir python3.7 && cd python3.7```
-    - ```docker image build .```
-    - ``````
+  - ```docker image build .```
+  - ``````
 
 - Dockerfiles are read from top-to-bottom. The first instruction must be the FROM command which lets us import a base image to use for our image.
 - In this demo we’ll be using the official Docker image for Python 3.7, specifically the alpine version which includes only the bare minimum needed to run Python. The alpine version takes up 78MB of space versus full Python’s 923MB so it is a good option to start with!
-- image layering and it exists for two main reasons. 
-    - First, each image layer is immutable–unchanged–like a git commit. This helps ensure consistency when two developers build the same image
-    - Second reason is performance.
+- image layering and it exists for two main reasons.
+  - First, each image layer is immutable–unchanged–like a git commit. This helps ensure consistency when two developers build the same image
+  - Second reason is performance.
 
 - Docker caches the steps in a Dockerfile to speed up subsequent builds. When a change is made to a step, all steps following it will be executed from scratch. For this reason, order matters in a Dockerfile
 - Typically you want to put code that won’t change often at the top and code that will change at the end
 
 - Establish a new Django project from scratch:
-    - ```mkdir djangoapp && cd djangoapp```
+  - ```mkdir djangoapp && cd djangoapp```
 - ```pipenv install django==3.0```
 - ```pipenv shell```
 - ```(djangoapp) $ django-admin startproject example_project .```
@@ -1237,35 +1245,35 @@ LOGOUT_REDIRECT_URL = 'home
 
 - Remember that order is extremely important for performance and managing image size
 
-#### Chapter 2: Library Website and API
-- https://djangoforapis.com/library-website-and-api/
+#### Chapter **12: Librar**y Website and API
+
+- <https://djangoforapis.com/library-website-and-api/>
 
 - We cannot build a web API with only Django Rest Framework; it always must be added to a project after Django itself has been installed and configured.
 
 - Django creates websites containing webpages, while Django REST Framework creates web APIs which are a collection of URL endpoints containing available HTTP verbs that return JSON
 - 1. dedicated directory on our computer to store the code.
-- 2. install Django
+- **12. instal**l Django
 - 3. shell up
 - 4. create a new project (```(library) $ django-admin startproject config .```)
 - 5. Check the tree (```brew install tree```)
-- 6. Run migrate to sync the database with Django’s default settings and start up the local Django web server. 
-    - (```(library) $ python manage.py migrate```)
-    - (```(library) $ python manage.py runserver```)
-- 7. Open a web browser to http://127.0.0.1:8000/ to confirm our project is successfully installed.
+- 6. Run migrate to sync the database with Django’s default settings and start up the local Django web server.
+  - (```(library) $ python manage.py migrate```)
+  - (```(library) $ python manage.py runserver```)
+- 7. Open a web browser to <http://127.0.0.1:8000/> to confirm our project is successfully installed.
 - 8. create a books app ```(library) $ python manage.py startapp books```
 - 9. add the new app to our INSTALLED_APPS configuration (settings.py)
 - 10. run migrate to sync our database with the changes (```(library) $ python manage.py migrate```)
 - 11. Create a model in books/models.py, import models, create a Book class that extends it
-    - In this case, there are four fields: title, subtitle, author, and isbn. We also include a __str__ method so that the title of a book will display in the admin later on.
+  - In this case, there are four fields: title, subtitle, author, and isbn. We also include a __str__ method so that the title of a book will display in the admin later on.
 - 12. Since we created a new database model we need to create a migration file to go along with it, then update our database.
-    - ```(library) $ python manage.py makemigrations books```
-    - ```(library) $ python manage.py migrate```
+  - ```(library) $ python manage.py makemigrations books```
+  - ```(library) $ python manage.py migrate```
 - 13. Create a superuser account and update admin.py so the books app is displayed.
-    - ```(library) $ python manage.py createsuperuser```
+  - ```(library) $ python manage.py createsuperuser```
 - 14. Register app in admin.py file (```admin.site.register(Book)```)
-- 15. Make our template 
+- 15. Make our template
 - 16. Configure our URLs
-
 
 - Django REST Framework is added just like any other third-party app. Make sure to quit the local server Control + c if it is still running. Then on the command line type the below.
 
@@ -1282,11 +1290,12 @@ LOGOUT_REDIRECT_URL = 'home
 20. A serializer translates data into a format that is easy to consume over the internet, typically JSON, and is displayed at an API endpoint. Make a serializers.py file within our api app.
 21. Import Django REST Framework’s serializers class and the Book model from our books app. We extend Django REST Framework’s ModelSerializer into a BookSerializer class that specifies our database model Book and the database fields we wish to expose: title, subtitle, author, and isbn.
 
-22. We want to see what our API endpoint looks like. We know it should return JSON at the URL http://127.0.0.1:8000/api/ (```python manage.py runserver```)
+22. We want to see what our API endpoint looks like. We know it should return JSON at the URL <http://127.0.0.1:8000/api/> (```python manage.py runserver```)
 
 23. Open a new, second command line console. We will use it to access the API running in the existing command line console. We can use the popular cURL program to execute HTTP requests via the command line. All we need for a basic GET request it to specify curl and the URL we want to call.
 
 ## Cheat sheet notes
+
 - ```__init__.py``` is a Python way to treat a directory as a package; it is empty
 - ```asgi.py``` stands for Asynchronous Server Gateway Interface and is a new option in Django 3.0+
 - ```settings.py``` contains all the configuration for our project
@@ -1299,8 +1308,7 @@ LOGOUT_REDIRECT_URL = 'home
 - ```the migrations/``` directory stores migrations files for database changes
 - ```models.py``` is where we define our database models
 - ```tests.py``` is for our app-specific tests
-- ```views.py``` is where we handle the request/response logic for our web app. Now update our book app’s admin.py file. 
-
+- ```views.py``` is where we handle the request/response logic for our web app. Now update our book app’s admin.py file.
 
 - Typically developers will also create an urls.py file within each app too for routing.
 
@@ -1308,15 +1316,15 @@ LOGOUT_REDIRECT_URL = 'home
 
 #### Permissions
 
-- https://www.django-rest-framework.org/api-guide/permissions/
+- <https://www.django-rest-framework.org/api-guide/permissions/>
 
 - Authentication or identification by itself is not usually sufficient to gain access to information or code. For that, the entity requesting access must have authorization.
-- Permissions are used to grant or deny access for different classes of users to different parts of the API. 
+- Permissions are used to grant or deny access for different classes of users to different parts of the API.
 - Permissions determine whether a request should be granted or denied access.
 - ***Permission checks are always run at the very start of the view, before any other code is allowed to proceed.***
-    - Permission checks will typically use the authentication information in the request.user and request.auth properties to determine if the incoming request should be permitted. 
+  - Permission checks will typically use the authentication information in the request.user and request.auth properties to determine if the incoming request should be permitted.
 - The simplest style of permission would be to allow access to any authenticated user, and deny access to any unauthenticated user. This corresponds to the ```IsAuthenticated``` class in REST framework.
-    - A slightly less strict style of permission would be to allow full access to authenticated users, but allow read-only access to unauthenticated users. This corresponds to the ```IsAuthenticatedOrReadOnly``` class in REST framework.
+  - A slightly less strict style of permission would be to allow full access to authenticated users, but allow read-only access to unauthenticated users. This corresponds to the ```IsAuthenticatedOrReadOnly``` class in REST framework.
 
 - If any permission check fails an exceptions.PermissionDenied or exceptions.NotAuthenticated exception will be raised, and the main body of the view will not run.
 
@@ -1324,11 +1332,11 @@ LOGOUT_REDIRECT_URL = 'home
 
 - This will either raise a ```PermissionDenied``` or ```NotAuthenticated``` exception, or simply return if the view has the appropriate permissions
 
-- The default permission policy may be set globally, using the ```DEFAULT_PERMISSION_CLASSES``` setting. 
+- The default permission policy may be set globally, using the ```DEFAULT_PERMISSION_CLASSES``` setting.
 If not specified, this setting defaults to allowing unrestricted access:
 
 ```'DEFAULT_PERMISSION_CLASSES': [```
-```   'rest_framework.permissions.AllowAny',```
+```'rest_framework.permissions.AllowAny',```
 ```]```
 
 - **AllowAny**: The AllowAny permission class will allow unrestricted access, regardless of if the request was authenticated or unauthenticated.
@@ -1357,8 +1365,8 @@ The default behaviour can also be overridden to support custom model permissions
 - Can be signed using a secret or a public/private key pair using RSA or ECDSA.
 - Signed tokens can verify the integrity of the claims contained within it, while encrypted tokens hide those claims from other parties
 
-- *Authorization*: This is the most common scenario for using JWT. Once the user is logged in, each subsequent request will include the JWT, allowing the user to access routes, services, and resources that are permitted with that token. 
-    - Single Sign On is a feature that widely uses JWT nowadays, because of its small overhead and its ability to be easily used across different domains.
+- *Authorization*: This is the most common scenario for using JWT. Once the user is logged in, each subsequent request will include the JWT, allowing the user to access routes, services, and resources that are permitted with that token.
+  - Single Sign On is a feature that widely uses JWT nowadays, because of its small overhead and its ability to be easily used across different domains.
 - *Information Exchange*: JSON Web Tokens are a good way of securely transmitting information between parties. Because JWTs can be signed—for example, using public/private key pairs—you can be sure the senders are who they say they are. Additionally, as the signature is calculated using the header and the payload, you can also verify that the content hasn't been tampered with.
 
 - In its compact form, JSON Web Tokens consist of three parts separated by dots (.), which are: Header, Payload, Signature ```xxxxx.yyyyy.zzzzz```
@@ -1370,23 +1378,20 @@ The default behaviour can also be overridden to support custom model permissions
 - **Signature**: To create the signature part you have to take the encoded header, the encoded payload, a secret, the algorithm specified in the header, and sign that.
 - The output is three Base64-URL strings separated by dots that can be easily passed in HTML and HTTP environments, while being more compact when compared to XML-based standards such as SAML.
 
-
-- If you want to play with JWT and put these concepts into practice https://jwt.io/#debugger-io
+- If you want to play with JWT and put these concepts into practice <https://jwt.io/#debugger-io>
 - Do not store sensitive session data in browser storage due to lack of security.
 
 - JSON Web Tokens (JWT) vs. Simple Web Tokens (SWT) vs. Security Assertion Markup Language Tokens (SAML).
-    - As JSON is less verbose than XML, when it is encoded its size is also smaller, making JWT more compact than SAML. This makes JWT a good choice to be passed in HTML and HTTP environments.
-    - JSON parsers are common in most programming languages because they map directly to objects. Conversely, XML doesn't have a natural document-to-object mapping. This makes it easier to work with JWT than SAML assertions.
-
+  - As JSON is less verbose than XML, when it is encoded its size is also smaller, making JWT more compact than SAML. This makes JWT a good choice to be passed in HTML and HTTP environments.
+  - JSON parsers are common in most programming languages because they map directly to objects. Conversely, XML doesn't have a natural document-to-object mapping. This makes it easier to work with JWT than SAML assertions.
 
 #### DRF JWT Authentication
 
-- https://simpleisbetterthancomplex.com/tutorial/2018/12/19/how-to-use-jwt-authentication-with-django-rest-framework.html
-
+- <https://simpleisbetterthancomplex.com/tutorial/2018/12/19/how-to-use-jwt-authentication-with-django-rest-framework.html>
 
 - The JWT is acquired by exchanging an username + password for an access token and an refresh token
-    - The access token is usually short-lived (expires in 5 min or so, can be customized though).
-    - The refresh token lives a little bit longer (expires in 24 hours, also customizable). It is comparable to an authentication session. After it expires, you need a full login with username + password again.
+  - The access token is usually short-lived (expires in 5 min or so, can be customized though).
+  - The refresh token lives a little bit longer (expires in 24 hours, also customizable). It is comparable to an authentication session. After it expires, you need a full login with username + password again.
 
 ```header = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9```
 ```payload = eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTQzODI4NDMxLCJqdGkiOiI3ZjU5OTdiNzE1MGQ0NjU3OWRjMmI0OTE2NzA5N2U3YiIsInVzZXJfaWQiOjF9```
@@ -1420,20 +1425,97 @@ The default behaviour can also be overridden to support custom model permissions
 
 - At first glance the refresh token may look pointless, but in fact it is necessary to make sure the user still have the correct permissions. If your access token have a long expire time, it may take longer to update the information associated with the token. That’s because the authentication check is done by cryptographic means, instead of querying the database and verifying the data.
 
+### *Class 34 Reading*
+
+#### Django Settings: Best Practices
+
+- <https://djangostars.com/blog/configuring-django-settings-best-practices/>
+
+- **Django settings are a Python code.** This is a curse and a blessing at the same time. It gives you a lot of flexibility, but can also be a problem – instead of key-value pairs, settings.py can have a very tricky logic.
+
+- There's no built-in universal way to configure Django settings without hardcoding them
+- **settings_local.py**: extend all environment-specific settings in the settings_local.py file, which is ignored by VCS
+- Good:  Secrets not in VCS.
+- Bad: You can lose some of your Django environment settings,
+- **Separate settings file for each environment**:  keeps all configurations in VCS and to share default settings between developers.
+
+- **To run a project with a specific configuration, you need to set an additional parameter:** ```python manage.py runserver --settings=settings.local```
+- ^^ It’s easy to share settings between developers.
+- You need to find a way to handle secret passwords and tokens & "Inheritance” of settings can be hard to trace and maintain.
+- **Environment variables**: os.environ. You need to handle KeyError exceptions & convert types manually (see DATABASE_PORT usage). You need to handle sharing default config between developers.
+- **12 Factors** is a collection of recommendations on how to build distributed web-apps that will be easy to deploy and scale in the Cloud. It was created by Heroku, a well-known Cloud hosting provider.
+
+As the name suggests, the collection consists of twelve parts:
+
+1. Codebase
+2. Dependencies
+3. **Config**
+4. Backing services
+5. Build, release, run
+6. Processes
+7. Port binding
+8. Concurrency
+9. Disposability
+10. Dev/prod parity
+11. Logs
+12. Admin processes
+
+- *Store configuration in the environment.* Following this recommendation will give us strict separation of config from code.
+
+- environment variables are the perfect place to store settings.
+- Writing code using os.environ could be tricky sometimes and require additional effort to handle errors. It’s better to use django-environ instead.
+- Naming of variables is one of the most complex parts of development. *So is naming of settings.*
+
+- Keep settings in environment variables.
+- Write default values for production configuration (excluding secret keys and tokens).
+- Don’t hardcode sensitive settings, and don’t put them in VCS.
+- Split settings into groups: Django, third-party, project.
+- Follow naming conventions for custom (project) settings.
+
+#### How Does SSH Work
+
+- <https://www.hostinger.com/tutorials/ssh-tutorial-how-does-ssh-work>
+
+- SSH, or Secure Shell, is a remote administration protocol that allows users to control and modify their remote servers over the Internet.
+- It provides a mechanism for authenticating a remote user, transferring inputs from the client to the host, and relaying the output back to the client.
+
+- The SSH command consists of 3 distinct parts: ```ssh {user}@{host}```
+
+- The SSH key command instructs your system that you want to open an encrypted Secure Shell Connection. {user} represents the account you want to access.
+- The significant advantage offered by SSH over its predecessors is the use of encryption to ensure secure transfer of information between the host and the client.
+
+
+- **Host** refers to the remote server you are trying to access, while the **client** is the computer you are using to access the host.
+**Symmetrical encryption** - secret key is used for both encryption and decryption of a message by both the client and the host. shared key or shared secret 
+**Asymmetrical encryption** - uses two separate keys for encryption and decryption. These two keys are known as the public key and the private key. Together, both these keys form a public-private key pair.
+**Hashing.** - One-way hashing is another form of cryptography used in Secure Shell Connections. One-way-hash functions differ from the above two forms of encryption in the sense that they are never meant to be decrypted. They generate a unique value of a fixed length for each input that shows no clear trend which can exploited. **This makes them practically impossible to reverse.**
+
+- The client must begin the SSH connection by initiating the TCP handshake with the server, ensuring a secured symmetric connection, verifying whether the identity displayed by the server match previous records (typically recorded in an RSA key store file), and presenting the required user credentials to authenticate the connection.
+
+- **Session Encryption Negotiation**: When a client tries to connect to the server via TCP, the server presents the encryption protocols and respective versions that it supports.
+- **seed value.**: Both the client and the server agree on a very large prime number, which of course does not have any factor in common. 
+
+
+
+
+
+
+
+
 <!-- You can use the [editor on GitHub](https://github.com/testOrg762/reading-notes/edit/main/README.md) to maintain and preview the content for your website in Markdown files. -->
 
 <!-- Syntax highlighted code block -->
 
 <!-- # Header 1
-## Header 2
-### Header 3
+## Header **12
+### Hea**der 3
 
 - Bulleted
 - List
 
 1. Numbered
-2. List
+**12. List
 
-**Bold** and _Italic_ and `Code` text -->
+****Bold** and _Italic_ and `Code` text -->
 
 <!-- [Link](url) and ![Image](src) -->
