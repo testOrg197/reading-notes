@@ -1496,7 +1496,7 @@ As the name suggests, the collection consists of twelve parts:
 - **seed value.**: Both the client and the server agree on a very large prime number, which of course does not have any factor in common. 
 
 
-### *Class 30 Reading*
+### *Class 34 Reading*
 
 Graph: a non-linear data structure
     Veritces = Nodes
