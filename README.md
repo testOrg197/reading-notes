@@ -1496,7 +1496,59 @@ As the name suggests, the collection consists of twelve parts:
 - **seed value.**: Both the client and the server agree on a very large prime number, which of course does not have any factor in common. 
 
 
+### *Class 30 Reading*
 
+Graph: a non-linear data structure
+    Veritces = Nodes
+    Edges: The connecting line segments
+
+Vertex - (aka Nodes) a data object that can have zero or more adjacent vertices.
+
+Neighbor - The neighbors of a node are its adjacent nodes, i.e., are connected via an edge.
+
+Degree - The degree of a vertex is the number of edges connected to that vertex. 
+
+
+Directed: (aka Digraph) a graph where every edge is directed.
+Undirected: A graph where each edge is undirected or bi-directional. This means that the undirected graph does not move in any direction.
+
+3 Types or graphs: 
+- Complete: *ALL* nodes are connected to all other nodes.
+- Connected: All of vertices/nodes have at least one edge
+- Disconnected: A graph where some vertices may not have edges.
+
+
+Acyclic: A directed graph without cycles
+Cyclic: A a graph that has cycles. When a node can be traversed through and potentially end up back at itself
+
+
+
+Adjacency Matrix: Represented through a 2-dimensional array. If there are n vertices, then we are looking at an n x n Boolean matrix
+- The elements of both the column and the row must add up to 1 if there is an edge that connects the two, or zero if there isn’t a connection.
+- Sparse: When there are very few connections
+- Dense: When there are many connections
+Adjacency List: A collection of linked lists or array that lists all of the other vertices that are connected.
+
+Weighted Graph: A graph with numbers assigned to its edges. These numbers are called weights
+
+Breadth First Traversal: when you visit all the nodes that are closest to the root as possible. From there you traverse outwards, level by level, until you have visited all the vertices/nodes.
+- Start at a specific vertex/node, include a flag to determine whether or not a node's been visited to avoid a loop, 
+1. Enqueue the declared start node into the Queue.
+2. Create a loop that will run while the node still has nodes present.
+3. Dequeue the first node from the queue
+4. If the Dequeue‘d node has unvisited child nodes, mark the unvisited children as visited and re-insert them back into the queue.
+
+
+Depth First Traversal: Traversing the graph vertically
+1. Push the root node into the stack
+2. Start a while loop while the stack is not empty
+3. Peek at the top node in the stack
+4. If the top node has unvisited children, mark the top node as visited, and then Push any unvisited children back into the stack.
+5. If the top node does not have any unvisited children, Pop that node off the stack
+6. Repeat until the stack is empty.
+
+<br><br>
+<br><br>
 
 
 
