@@ -1496,7 +1496,7 @@ As the name suggests, the collection consists of twelve parts:
 - **seed value.**: Both the client and the server agree on a very large prime number, which of course does not have any factor in common. 
 
 
-### *Class 34 Reading*
+### *Class 35 Reading*
 
 Graph: a non-linear data structure
     Veritces = Nodes
@@ -1551,9 +1551,34 @@ Depth First Traversal: Traversing the graph vertically
 <br><br>
 
 
+### *Class 36 Reading*
 
+#### Whiteboard Interviews
 
+- <https://hackernoon.com/the-best-whiteboard-interview-advice-i-ever-received-3ebbfa72e4a/>
 
+- The Advice: Communicate!
+- First, Restate the Question: So I’d like to restate the problem to you to make sure I understand what you’re looking for. The sole parameter for my function will be an integer. The sole output of my function will be an incrementing array, starting from the number 1 and ending at the input number.
+
+- Ask About Edge Cases: Now that I confirmed my understanding of the problem, I’d like to ask about some potential edge cases. Is it possible that the input would be a type other than a number? If so, what should the function do? Can the input be 0 or negative? Again, if so, what should the function do?
+
+- Ask About Test Cases
+
+- Write Pseudocode and Ask If It Makes Sense: Let your interviewer know you’re going to start by writing pseudocode and fill in the actual code later
+
+- Bonus: Communicating Prior to the Interview: Are you curious whether there will be a coding portion of the interview? Ask them!
+
+#### 7 Tips
+
+- <https://blog.usejournal.com/6-tips-to-ace-a-whiteboard-programming-interview-f06c1b378bc6/>
+
+- 1) Take a few minutes.
+- 2) Write down the steps of the solution.'
+- 3) Write pseudocode first.
+- 4) Don’t sweat the small stuff
+- 5) Sit down. Be humble.
+- 6) Come prepared.
+- 7) Review your work.
 <!-- You can use the [editor on GitHub](https://github.com/testOrg762/reading-notes/edit/main/README.md) to maintain and preview the content for your website in Markdown files. -->
 
 <!-- Syntax highlighted code block -->
