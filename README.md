@@ -1579,6 +1579,93 @@ Depth First Traversal: Traversing the graph vertically
 - 5) Sit down. Be humble.
 - 6) Come prepared.
 - 7) Review your work.
+
+
+
+### *Class 37 Reading*
+
+#### ES6 Syntax and Feature Overview
+- https://www.taniarascia.com/es6-syntax-and-feature-overview/
+
+#### React - Hello World
+- https://reactjs.org/docs/hello-world.html
+#### React - JSX
+- https://reactjs.org/docs/introducing-jsx.html
+
+- JSX, is a syntax extension to JavaScript. 
+- Use it with React to describe what the UI should look like. JSX may remind you of a template language, but it comes with the full power of JavaScript.
+- JSX produces React “elements”. We will explore rendering them to the DOM in the next section. 
+
+
+#### React - Rendering Elements
+- https://reactjs.org/docs/rendering-elements.html
+
+- An element describes what you want to see on the screen
+- Unlike browser DOM elements, React elements are plain objects, and are cheap to create. React DOM takes care of updating the DOM to match the React elements.
+
+#### React - Components & Props
+- https://reactjs.org/docs/components-and-props.html
+
+- Components let you split the UI into independent, reusable pieces, and think about each piece in isolation.
+- Conceptually, components are like JavaScript functions. They accept arbitrary inputs (called “props”) and return React elements describing what should appear on the screen.
+- We call ReactDOM.render() with the <Welcome name="Sara" /> element.
+- React calls the Welcome component with {name: 'Sara'} as the props.
+- Our Welcome component returns a <h1>Hello, Sara</h1> element as the result.
+- React DOM efficiently updates the DOM to match <h1>Hello, Sara</h1>.
+
+#### React - State & Lifecycle
+- https://reactjs.org/docs/state-and-lifecycle.html
+
+
+- In applications with many components, it’s very important to free up resources taken by the components when they are destroyed.
+- We want to set up a timer whenever the Clock is rendered to the DOM for the first time. This is called “mounting” in React.
+- We also want to clear that timer whenever the DOM produced by the Clock is removed. This is called “unmounting” in React.
+- We can declare special methods on the component class to run some code when a component mounts and unmounts:
+
+
+#### React - Handling Events
+- https://reactjs.org/docs/handling-events.html
+
+- React events are named using camelCase, rather than lowercase.
+- With JSX you pass a function as the event handler, rather than a string.
+- You must call preventDefault explicitly. For example, with plain HTML, to prevent the default link behavior of opening a new page
+
+#### Utility First CSS
+- https://tailwindcss.com/docs/utility-first
+#### Tailwind in 15 minutes
+- https://www.youtube.com/watch?v=6zIuAyLZPH0
+
+- New CSS framework
+- Gives you classes to compose HTML
+ - 1. Install CSS (never write custom CSS. Avoid the !important tag)
+ - 2. Div, class "border (auto adds border) shadow rounded-lg p-10 "(p-10 stands for padding)
+ - 3. Use search box in tailwindcss to check the utilities
+
+IF USING SASS: Can use @apply in the sass folder
+
+#### Learn Next.js
+- https://nextjs.org/learn/basics/create-nextjs-app
+
+- An intuitive page-based routing system (with support for dynamic routes)
+- Pre-rendering, both static generation (SSG) and server-side rendering (SSR) are supported on a per-page basis
+- Automatic code splitting for faster page loads
+- Client-side routing with optimized prefetching
+- Built-in CSS and Sass support, and support for any CSS-in-JS library
+- Development environment with Fast Refresh support
+- API routes to build API endpoints with Serverless Functions
+- Fully extendable
+
+#### Why to use Next.js
+- https://www.youtube.com/watch?v=rtgbaKBhdkk
+
+
+
+
+
+
+
+
+
 <!-- You can use the [editor on GitHub](https://github.com/testOrg762/reading-notes/edit/main/README.md) to maintain and preview the content for your website in Markdown files. -->
 
 <!-- Syntax highlighted code block -->
