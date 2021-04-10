@@ -1658,7 +1658,70 @@ IF USING SASS: Can use @apply in the sass folder
 #### Why to use Next.js
 - https://www.youtube.com/watch?v=rtgbaKBhdkk
 
+### *Class 38 Reading*
+#### React - Conditional Rendering
+- https://reactjs.org/docs/conditional-rendering.html
+- Conditional rendering in React works the same way conditions work in JavaScript. 
+- Use JavaScript operators like if or the conditional operator to create elements representing the current state, and let React update the UI to match them.
 
+
+
+#### React - Lists & Keys
+- https://reactjs.org/docs/lists-and-keys.html
+- One way to transform lists: Use the map() function to take an array of numbers and double their values. We assign the new array returned by map() to the variable doubled and log it
+- In React, transforming arrays into lists of elements is nearly identical
+- Keys help React identify which items have changed, are added, or are removed. Keys should be given to the elements inside the array to give the elements a stable identity
+- When you don’t have stable IDs for rendered items, you may use the item index as a key as a last resort
+- Keys only make sense in the context of the surrounding array.For example, if you extract a ListItem component, you should keep the key on the <ListItem /> elements in the array rather than on the <li> element in the ListItem itself.
+- Keys used within arrays should be unique among their siblings. However they don’t need to be globally unique.
+
+
+
+
+#### React - Forms
+- https://reactjs.org/docs/forms.html
+- HTML form elements work a little bit differently from other DOM elements in React, because form elements naturally keep some internal state.
+- In HTML, form elements such as <input>, <textarea>, and <select> typically maintain their own state and update it based on user input. In React, mutable state is typically kept in the state property of components, and only updated with setState()
+- We can combine the two by making the React state be the “single source of truth”. 
+- for a complete solution including validation, keeping track of the visited fields, and handling form submission, Formik is one of the popular choices. 
+
+
+
+#### React - Lifting State
+- https://reactjs.org/docs/lifting-state-up.html
+- Often, several components need to reflect the same changing data. We recommend lifting the shared state up to their closest common ancestor.
+- One of the inputs gets the value as is, so any user input is preserved, and the other input value is always recalculated based on it.
+- React calls the function specified as onChange on the DOM <input>. In our case, this is the handleChange method in the TemperatureInput component.
+- The handleChange method in the TemperatureInput component calls this.props.onTemperatureChange() with the new desired value. Its props, including onTemperatureChange, were provided by its parent component, the Calculator.
+- When it previously rendered, the Calculator had specified that onTemperatureChange of the Celsius TemperatureInput is the Calculator’s handleCelsiusChange method, and onTemperatureChange of the Fahrenheit TemperatureInput is the Calculator’s handleFahrenheitChange method. So either of these two Calculator methods gets called depending on which input we edited.
+- Inside these methods, the Calculator component asks React to re-render itself by calling this.setState() with the new input value and the current scale of the input we just edited.
+- React calls the Calculator component’s render method to learn what the UI should look like. The values of both inputs are recomputed based on the current temperature and the active scale. The temperature conversion is performed here.
+- React calls the render methods of the individual TemperatureInput components with their new props specified by the Calculator. It learns what their UI should look like.
+- React calls the render method of the BoilingVerdict component, passing the temperature in Celsius as its props.
+- React DOM updates the DOM with the boiling verdict and to match the desired input values. The input we just edited receives its current value, and the other input is updated to the temperature after conversion.
+
+
+
+#### React - Composition vs Inheritance
+- https://reactjs.org/docs/composition-vs-inheritance.html
+- React has a powerful composition model, and we recommend using composition instead of inheritance to reuse code between components
+- Sometimes we think about components as being “special cases” of other components. For example, we might say that a WelcomeDialog is a special case of Dialog. In React, this is also achieved by composition, where a more “specific” component renders a more “generic” one and configures it with props
+- Props and composition give you all the flexibility you need to customize a component’s look and behavior in an explicit and safe way. 
+- Remember that components may accept arbitrary props, including primitive values, React elements, or functions.
+
+
+
+
+
+
+#### Thinking in React
+- https://reactjs.org/docs/thinking-in-react.html
+- React is, in our opinion, the premier way to build big, fast Web apps with JavaScript.
+- Step 1: Break The UI Into A Component Hierarchy
+- Step 2: Build A Static Version in React
+- Step 3: Identify The Minimal (but complete) Representation Of UI State
+- Step 4: Identify Where Your State Should Live
+- Step 5: Add Inverse Data Flow
 
 
 
