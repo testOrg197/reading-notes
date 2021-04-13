@@ -1716,6 +1716,8 @@ IF USING SASS: Can use @apply in the sass folder
 
 #### Thinking in React
 - https://reactjs.org/docs/thinking-in-react.html
+
+ Next.js provides a solution to all of these problems:
 - React is, in our opinion, the premier way to build big, fast Web apps with JavaScript.
 - Step 1: Break The UI Into A Component Hierarchy
 - Step 2: Build A Static Version in React
@@ -1727,6 +1729,34 @@ IF USING SASS: Can use @apply in the sass folder
 
 
 
+### *Class 39 Reading*
+
+#### Create a Next.js App
+- https://nextjs.org/learn/basics/create-nextjs-app
+
+- Code has to be bundled using a bundler like webpack and transformed using a compiler like Babel.
+- You need to do production optimizations such as code splitting.
+- You might want to statically pre-render some pages for performance and SEO. You might also want to use server-side rendering or client-side rendering.
+- You might have to write some server-side code to connect your React app to your data store.
+
+- Client-side navigation means that the page transition happens using JavaScript, which is faster than the default navigation done by the browser. Here’s a simple way you can verify it: 1 Use the browser’s developer tools to change the background CSS property of <html> to yellow. 2 Click on the links to go back and forth between the two pages. You’ll see that the yellow background persists between page transitions.
+- If you’ve used <a href="…"> instead of <Link href="…"> and did this, the background color will be cleared on link clicks because the browser does a full refresh.
+
+- Next.js does code splitting automatically, so each page only loads what’s necessary for that page
+- If a certain page throws an error, the rest of the application would still work.
+- In a production build of Next.js, whenever Link components appear in the browser’s viewport, Next.js automatically prefetches the code for the linked page in the background. By the time you click the link, the code for the destination page will already be loaded in the background, and the page transition will be near-instant!
+
+- If you need to link to an external page outside the Next.js app, just use an <a> tag without Link.
+- If you need to add attributes like className, add it to the a tag, not to the Link tag.
+- Next.js can serve static assets, like images, under the top-level public directory
+
+- `next/image` is an extension of the HTML <img> element, evolved for the modern web.
+- Next.js has built-in support for CSS and Sass which allows you to import .css and .scss files.
+- **Important**: To use CSS Modules, the CSS file name must end with *.module.css*.
+- This is what CSS Modules does: It automatically generates unique class names. As long as you use CSS Modules, you don’t have to worry about class name collisions.
+- Next.js’s code splitting feature works on CSS Modules as well. It ensures the minimal amount of CSS is loaded for each page. This results in smaller bundle sizes.
+- if you want some CSS to be loaded by every page, Next.js has support for that as well.
+- In Next.js, you can add global CSS files by importing them from pages/_app.js. You **cannot** import global CSS anywhere else.
 
 
 <!-- You can use the [editor on GitHub](https://github.com/testOrg762/reading-notes/edit/main/README.md) to maintain and preview the content for your website in Markdown files. -->
