@@ -1759,6 +1759,90 @@ IF USING SASS: Can use @apply in the sass folder
 - In Next.js, you can add global CSS files by importing them from pages/_app.js. You **cannot** import global CSS anywhere else.
 
 
+
+### *Class 41 Reading*
+
+#### Dynamic Routes
+- https://nextjs.org/learn/basics/dynamic-routes
+
+- Page Path Depends on External Data: Use `getStaticProps` to fetch required data to render the index page.
+- We want each post to have the path /posts/<id>, where <id> is the name of the markdown file under the top-level posts directory.
+- Since we have ssg-ssr.md and pre-rendering.md, we’d like the paths to be /posts/ssg-ssr and /posts/pre-rendering.
+
+- Pages that begin with [ and end with ] are dynamic routes in Next.js.
+  - Export an async function called getStaticPaths from this page. In this function, we need to return a list of possible values for id.
+- Implement getStaticProps again - this time, to fetch necessary data for the blog post with a given id. getStaticProps is given params, which contains id (because the file name is [id].js).
+- The returned list is not just an array of strings — it must be an array of objects
+  - Each object must have the params key and contain an object with the id key (because we’re using [id] in the file name).
+- paths contains the array of known paths returned by getAllPostIds(), which include the params defined by pages/posts/[id].js. 
+- To fetch necessary data to render the post with the given `id`, open lib/posts.js again and add the following getPostData function at the bottom. It will return the post data based on `id`:
+
+```export function getPostData(id) {```
+  ```const fullPath = path.join(postsDirectory, `${id}.md`)```
+  ```const fileContents = fs.readFileSync(fullPath, 'utf8')```
+
+  ```// Use gray-matter to parse the post metadata section```
+  ```const matterResult = matter(fileContents)```
+
+  ```// Combine the data with the id```
+  ```return {```
+    ```id,```
+    ```...matterResult.data```
+  ```}```
+```}```
+
+Change this:
+
+```import { getAllPostIds } from '../../lib/posts'```
+
+To this: 
+
+```import { getAllPostIds, getPostData } from '../../lib/posts'```
+
+```export async function getStaticProps({ params }) {```
+  ```const postData = getPostData(params.id)```
+  ```return {```
+    ```props: {```
+      ```postData```
+    ```}```
+  ```}```
+```}```
+
+- *Sample* pages/posts/[id].js: https://github.com/vercel/next-learn-starter/blob/master/dynamic-routes-step-1/pages/posts/%5Bid%5D.js
+- *Sample* lib/posts.js: https://github.com/vercel/next-learn-starter/blob/master/dynamic-routes-step-1/lib/posts.js
+
+- To render markdown content, we’ll use the remark library ```npm install remark remark-html```
+
+_ Add the following to the top: import remark from 'remark', import html from 'remark-html'
+
+- Add the async keyword to getPostData because we need to use await for remark. async/await allow you to fetch data asynchronously.
+- To format the date, use the date-fns: ```npm install date-fns```
+
+
+#### Deploying Your Next.js App
+- https://nextjs.org/learn/basics/deploying-nextjs-app
+
+- How to deploy your Next.js app to Vercel.
+  - If you haven’t initialized the git repository locally for your Next.js app, do so - Push the Next.js app to your GitHub repository.
+  - The easiest way to deploy Next.js to production is to use the Vercel platform developed by the creators of Next.js.
+  - Vercel is an all-in-one platform with Global CDN supporting static & JAMstack deployment and Serverless Functions. 
+    - Import your nextjs-blog repository
+    - Install Vercel for GitHub
+    - When you deploy, your Next.js app will start building. It should finish in under a minute
+    
+- The following happens by default:
+  - Pages that use Static Generation and assets (JS, CSS, images, fonts, etc) will automatically be served from the Vercel Edge Network, which is blazingly fast. 
+  - Pages that use Server-Side Rendering and API routes will automatically become isolated Serverless Functions. This allows page rendering and API requests to scale infinitely.
+
+- Vercel has many more features, such as:
+  - Custom Domains: Once deployed on Vercel, you can assign a custom domain to your Next.js app. 
+  - Environment Variables
+  - Automatic HTTPS
+
+
+
+
+
 <!-- You can use the [editor on GitHub](https://github.com/testOrg762/reading-notes/edit/main/README.md) to maintain and preview the content for your website in Markdown files. -->
 
 <!-- Syntax highlighted code block -->
