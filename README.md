@@ -1863,8 +1863,19 @@ _ Add the following to the top: import remark from 'remark', import html from 'r
 - It first prepared the repeater object for iteration by calling its __iter__ method. This returned the actual iterator object.
   - After that, the loop repeatedly calls the iterator object’s __next__ method to retrieve values from it.
 - Iterators provide a common interface that allows you to process every element of a container while being completely isolated from the container’s internal structure.
-- 
 
+#### Generators
+- https://dbader.org/blog/python-generators
+- Generators look like regular functions but instead of using the return statement, they use yield to pass data back to the caller.
+- They look like normal functions, but their behavior is quite different. For starters, calling a generator function doesn’t even run the function. It merely creates and returns a generator object
+  - Think of them primarily as syntactic sugar for implementing iterators
+- Generators stop generating values as soon as control flow returns from the generator function by any means other than a yield statement
+- Python adds an implicit return None statement to the end of every function
+
+
+- Generator functions are syntactic sugar for writing objects that support the iterator protocol. Generators abstract away much of the boilerplate code needed when writing class-based iterators.
+- The yield statement allows you to temporarily suspend execution of a generator function and to pass back values from it.
+- Generators start raising StopIteration exceptions after control flow leaves the generator function by any means other than a yield statement.
 
 
 <!-- You can use the [editor on GitHub](https://github.com/testOrg762/reading-notes/edit/main/README.md) to maintain and preview the content for your website in Markdown files. -->
