@@ -1840,6 +1840,30 @@ _ Add the following to the top: import remark from 'remark', import html from 'r
   - Automatic HTTPS
 
 
+### *Class 42 Reading*
+
+#### Dunder Methods
+- https://dbader.org/blog/python-dunder-methods
+- A set of predefined methods you can use to enrich your classes
+- Dunder methods let you emulate the behavior of built-in types
+- You can implement a __getitem__ method which allows you to use Python’s list slicing syntax: obj[start:stop].
+
+- Initialization of new objects:__init__
+- Object representation: __str__, __repr__
+- Enable iteration: __len__, __getitem__, __reversed__
+- Operator overloading (comparison): __eq__, __lt__
+- Operator overloading (addition): __add__
+- Method invocation: __call__
+- Context manager support (with statement): __enter__, __exit__
+
+#### Iterators
+- https://dbader.org/blog/python-iterators
+- Objects that support the __iter__ and __next__ dunder methods automatically work with for-in loops.
+- The two dunder methods we defined, __iter__ and __next__, are the key to making a Python object iterable.
+- It first prepared the repeater object for iteration by calling its __iter__ method. This returned the actual iterator object.
+  - After that, the loop repeatedly calls the iterator object’s __next__ method to retrieve values from it.
+- Iterators provide a common interface that allows you to process every element of a container while being completely isolated from the container’s internal structure.
+- 
 
 
 
