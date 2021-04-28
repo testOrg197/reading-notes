@@ -1878,6 +1878,17 @@ _ Add the following to the top: import remark from 'remark', import html from 'r
 - Generators start raising StopIteration exceptions after control flow leaves the generator function by any means other than a yield statement.
 
 
+### *Class 43 Reading*
+
+#### Project Dragonfly, Google’s censored search engine
+- https://www.vox.com/2018/8/17/17704526/google-dragonfly-censored-search-engine-china
+- "They also expressed concern that the company is violating its own ethical principles." This sentence was really eye-opening, a censored search engine made for another country is a tough one. While I personally do not agree with it,  I do believe a company should have a set of ethical principles & be open with it's employees about what those are. Once a company starts violating those ethics, it is no surprise that the employees speak up about it. What a terrible feeling to be an employee, roped into this project when it's something you don't agree with morally. It was a bold move for those dozen or so that resigned, but an amazing feet that they were able to get Google to change direction.
+
+#### Ethical dilemma of self driving cars
+- https://www.freep.com/story/money/cars/2017/11/21/self-driving-cars-ethics/804805001/
+- Having a self-driving car is great, but the drawbacks and margin of error is just too great for a lot of people to risk - mainly, and more scarily, "Who dies when the car is forced into a no-win situation?". It would be great to understand more surrounding the way that developers/reserachers are making these choices before making the decision to own and/or ride in these vehicles. As clear as companies such as Tesla make it that the driver can use thier products, but must be ready to take control at any point, we've seen in the news that this is not how people actually use the product. 
+
+
 <!-- You can use the [editor on GitHub](https://github.com/testOrg762/reading-notes/edit/main/README.md) to maintain and preview the content for your website in Markdown files. -->
 
 <!-- Syntax highlighted code block -->
