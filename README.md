@@ -1889,6 +1889,27 @@ _ Add the following to the top: import remark from 'remark', import html from 'r
 - Having a self-driving car is great, but the drawbacks and margin of error is just too great for a lot of people to risk - mainly, and more scarily, "Who dies when the car is forced into a no-win situation?". It would be great to understand more surrounding the way that developers/reserachers are making these choices before making the decision to own and/or ride in these vehicles. As clear as companies such as Tesla make it that the driver can use thier products, but must be ready to take control at any point, we've seen in the news that this is not how people actually use the product. 
 
 
+### *Class 44 Reading*
+- Not too much to actually take notes on, but here are some good resources for finding entry level open source projects: 
+  - https://www.firsttimersonly.com/
+  - First contributions: https://github.com/multunus/first-contributions
+  - Git Hib open-source: https://github.com/open-source
+  - List of beginner-friendly projects: https://github.com/search?l=Python&q=label%3Agood-first-issue+archived%3Afalse&type=Issues 
+
+- Open-source software (OSS) is a rapidly growing industry that provides many benefits to the individuals and businesses who use it, as well as to its programmers.
+- There are not too many other industries that can boast the massive number of global contributions like the open-source community can
+  - Improve Coding Skills
+  - Gain Early Experience
+  - Increase Community and Peer Recognition
+  - Greater Job Prospects
+  - Improve Software on a User and Business Level
+
+
+
+
+
+
+
 <!-- You can use the [editor on GitHub](https://github.com/testOrg762/reading-notes/edit/main/README.md) to maintain and preview the content for your website in Markdown files. -->
 
 <!-- Syntax highlighted code block -->
